@@ -1,0 +1,54 @@
+{
+  "models": {
+    "main": {
+      "provider": "claude-code",
+      "modelId": "sonnet",
+      "maxTokens": 64000,
+      "temperature": 0.2,
+      "customSystemPrompt": "You are an expert software engineer working on a LangChain-native casino CMS system. Focus on LCEL chains, Pydantic v2 schemas, and multitenant architecture. Follow the project's CLAUDE.md guidelines strictly."
+    }
+  },
+  "project": {
+    "name": "LangChain Casino CMS",
+    "type": "langchain-native",
+    "architecture": "multitenant",
+    "technologies": [
+      "LangChain",
+      "LCEL", 
+      "LangGraph",
+      "Pydantic v2",
+      "Supabase",
+      "WordPress",
+      "DataForSEO",
+      "Firecrawl",
+      "Browserbase"
+    ]
+  },
+  "workflow": {
+    "maxTurns": 50,
+    "permissionMode": "guided",
+    "allowedTools": [
+      "Edit",
+      "Read", 
+      "Write",
+      "Bash(git *)",
+      "Bash(pytest *)",
+      "Bash(ruff *)",
+      "Bash(mypy *)",
+      "Bash(npm *)",
+      "Bash(poetry *)",
+      "Bash(uv *)"
+    ],
+    "disallowedTools": [
+      "Bash(rm -rf /*)",
+      "Bash(curl * | sh)"
+    ]
+  },
+  "standards": {
+    "codeStyle": "LCEL-first",
+    "testing": "pytest + golden evals",
+    "schemas": "Pydantic v2 with migrations",
+    "documentation": "Auto-generated from chains",
+    "compliance": "Mandatory QA gates"
+  }
+}

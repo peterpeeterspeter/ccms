@@ -1,0 +1,54 @@
+{
+  "id": "task-{number:03d}",
+  "title": "[Task Title]",
+  "description": "[Detailed description of what needs to be accomplished]",
+  "status": "pending",
+  "priority": "medium",
+  "category": "development",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "{timestamp}",
+  "updatedAt": "{timestamp}",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [
+    "[Criteria 1]",
+    "[Criteria 2]"
+  ],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [
+    {
+      "type": "code",
+      "path": "[file path]",
+      "description": "[deliverable description]"
+    }
+  ],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "{timestamp}",
+      "action": "created",
+      "user": "system",
+      "details": "Task created from PRD"
+    }
+  ]
+}

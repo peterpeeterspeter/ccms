@@ -1,0 +1,68 @@
+{
+  "id": "task-023",
+  "title": "Define ReviewDoc and QAReport Pydantic Schemas",
+  "description": "Create comprehensive Pydantic v2 schemas for ReviewDoc (narrative output) and QAReport (compliance validation). Support 95-field affiliate intel structure, multi-tenant branding fields, and strict validation rules.",
+  "status": "completed",
+  "priority": "critical",
+  "category": "schemas",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:56:34.359689+00:00",
+  "updatedAt": "2025-08-24T08:06:53.597520+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [
+    {
+      "timestamp": "2025-08-24T08:02:38.325373+00:00",
+      "note": "Starting implementation of comprehensive ReviewDoc and QAReport schemas",
+      "user": "taskmaster"
+    },
+    {
+      "timestamp": "2025-08-24T08:06:53.597520+00:00",
+      "note": "\u2705 Comprehensive ReviewDoc and QAReport schemas implemented with 26 and 20 fields respectively. Includes multi-tenant support, 95-field affiliate intelligence integration, visual content management, SEO optimization, WordPress publishing metadata, and comprehensive QA validation framework.",
+      "user": "taskmaster"
+    }
+  ],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:56:34.359689+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    },
+    {
+      "timestamp": "2025-08-24T08:02:38.325373+00:00",
+      "action": "status_change",
+      "user": "taskmaster",
+      "details": "Status changed from pending to in-progress"
+    },
+    {
+      "timestamp": "2025-08-24T08:06:53.597520+00:00",
+      "action": "status_change",
+      "user": "taskmaster",
+      "details": "Status changed from in-progress to completed"
+    }
+  ]
+}

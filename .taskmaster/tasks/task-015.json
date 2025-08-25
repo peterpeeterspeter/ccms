@@ -1,0 +1,45 @@
+{
+  "id": "task-015",
+  "title": "Design LangGraph Workflow Architecture",
+  "description": "Define LangGraph nodes and edges for complete workflow: 1) Ingest content, 2) Candidate retrieval, 3) Visual capture, 4) Narrative generation, 5) QA review, 6) Publish. Include conditional transitions and human-in-the-loop on QA fail.",
+  "status": "pending",
+  "priority": "critical",
+  "category": "phase4-workflow",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:52:57.677420+00:00",
+  "updatedAt": "2025-08-24T07:52:57.677420+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:52:57.677420+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "version": "1.0.0",
+  "projectId": "langchain-casino-cms",
+  "initialized": true,
+  "lastUpdated": "2025-08-24T08:07:41.106306+00:00",
+  "tasks": [
+    "task-001",
+    "task-002",
+    "task-003",
+    "task-004",
+    "task-005",
+    "task-006",
+    "task-007",
+    "task-008",
+    "task-009",
+    "task-010",
+    "task-011",
+    "task-012",
+    "task-013",
+    "task-014",
+    "task-015",
+    "task-016",
+    "task-017",
+    "task-018",
+    "task-019",
+    "task-020",
+    "task-021",
+    "task-022",
+    "task-023",
+    "task-024",
+    "task-025",
+    "task-026",
+    "task-027",
+    "task-028",
+    "task-029",
+    "task-030",
+    "task-031"
+  ],
+  "currentTask": null,
+  "metadata": {
+    "totalTasks": 31,
+    "completedTasks": 1,
+    "inProgressTasks": 1,
+    "pendingTasks": 29
+  },
+  "settings": {
+    "taskIdFormat": "task-{number:03d}",
+    "statusOptions": [
+      "pending",
+      "in-progress",
+      "completed",
+      "blocked",
+      "cancelled"
+    ],
+    "priorityLevels": [
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ],
+    "autoGenerate": true,
+    "requiresPRD": true
+  }
+}

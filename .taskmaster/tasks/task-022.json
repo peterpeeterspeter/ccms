@@ -1,0 +1,45 @@
+{
+  "id": "task-022",
+  "title": "Visual Content Compliance Testing",
+  "description": "Build automated tests for visual content compliance checking. Test license validation, watermark detection, size thresholds, and integration with firecrawl/cf_browser/browserless tools.",
+  "status": "pending",
+  "priority": "medium",
+  "category": "phase6-testing",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:55:18.720986+00:00",
+  "updatedAt": "2025-08-24T07:55:18.720986+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:55:18.720986+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    }
+  ]
+}

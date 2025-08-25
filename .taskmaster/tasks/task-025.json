@@ -1,0 +1,57 @@
+{
+  "id": "task-025",
+  "title": "Implement SupabaseVectorStore with MMR Search",
+  "description": "Configure SupabaseVectorStore with Maximal Marginal Relevance (MMR) search and tenant filtering. Ensure proper retrieval of 95-field affiliate intel with tenant_id, brand, and locale parameters.",
+  "status": "in-progress",
+  "priority": "critical",
+  "category": "retrieval",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:56:47.154852+00:00",
+  "updatedAt": "2025-08-24T08:07:41.105958+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [
+    {
+      "timestamp": "2025-08-24T08:07:41.105958+00:00",
+      "note": "Starting implementation of SupabaseVectorStore with MMR search and tenant filtering capabilities",
+      "user": "taskmaster"
+    }
+  ],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:56:47.154852+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    },
+    {
+      "timestamp": "2025-08-24T08:07:41.105958+00:00",
+      "action": "status_change",
+      "user": "taskmaster",
+      "details": "Status changed from pending to in-progress"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "task-028",
+  "title": "WordPressPublishingTool Native LangChain Integration",
+  "description": "Implement WordPressPublishingTool as native LangChain BaseTool. Accept structured ReviewDoc inputs with title, body, images, taxonomies. Support multi-tenant WordPress publishing workflows.",
+  "status": "pending",
+  "priority": "critical",
+  "category": "publishing",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:57:08.647463+00:00",
+  "updatedAt": "2025-08-24T07:57:08.647463+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:57:08.647463+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    }
+  ]
+}

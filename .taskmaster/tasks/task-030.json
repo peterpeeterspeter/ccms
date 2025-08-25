@@ -1,0 +1,45 @@
+{
+  "id": "task-030",
+  "title": "Multi-Tenant Integration Tests",
+  "description": "Build comprehensive integration tests across multiple tenants and languages. Test workflow end-to-end with different brand configurations, locales, and compliance requirements.",
+  "status": "pending",
+  "priority": "high",
+  "category": "integration-testing",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:57:21.114960+00:00",
+  "updatedAt": "2025-08-24T07:57:21.114960+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:57:21.114960+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    }
+  ]
+}

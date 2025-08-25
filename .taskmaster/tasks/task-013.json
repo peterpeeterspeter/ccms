@@ -1,0 +1,45 @@
+{
+  "id": "task-013",
+  "title": "Implement Visual Content Integration Node",
+  "description": "Create LangGraph node for visual capture via /src/tools/firecrawl, /cf_browser, or /browserless adapters. Implement compliance checking with RunnableLambda for license, watermark rules, size thresholds.",
+  "status": "pending",
+  "priority": "high",
+  "category": "phase3-qa-visual",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:52:33.518639+00:00",
+  "updatedAt": "2025-08-24T07:52:33.518639+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:52:33.518639+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "casino_review": {
+    "casino_name": "Mr Vegas Casino",
+    "review_rating": "9.2/10",
+    "content_features": [
+      "Comprehensive 2500+ word review",
+      "Detailed bonus and games analysis",
+      "Security and licensing information",
+      "Payment methods and banking details",
+      "Mobile gaming experience review",
+      "Customer support evaluation",
+      "VIP program and loyalty rewards",
+      "Responsible gaming tools",
+      "Pros and cons analysis",
+      "Final verdict and recommendations"
+    ]
+  },
+  "wordpress_publishing": {
+    "success": true,
+    "post_id": 51807,
+    "post_url": "https://www.crashcasino.io/?p=51807",
+    "site": "CrashCasino.io",
+    "status": "draft",
+    "published_at": "2025-08-24T21:59:25.211584"
+  },
+  "content_metrics": {
+    "estimated_word_count": "2500+",
+    "content_structure": "HTML with embedded styling",
+    "seo_optimized": true,
+    "mobile_responsive": true,
+    "visual_elements": "Embedded visual content sections"
+  },
+  "technical_details": {
+    "cms_system": "Agentic Multi-Tenant RAG CMS",
+    "publishing_method": "WordPress REST API",
+    "authentication": "Application Password",
+    "content_format": "HTML",
+    "api_endpoint": "https://crashcasino.io/wp-json/wp/v2/posts"
+  }
+}

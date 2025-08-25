@@ -1,0 +1,45 @@
+{
+  "id": "task-011",
+  "title": "Create ReviewDoc Pydantic Schema",
+  "description": "Design and implement Pydantic ReviewDoc schema for structured content output. Ensure integrity validation and compliance with affiliate content requirements. Support multi-tenant branding fields.",
+  "status": "pending",
+  "priority": "high",
+  "category": "phase2-content",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:52:16.317746+00:00",
+  "updatedAt": "2025-08-24T07:52:16.317746+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:52:16.317746+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    }
+  ]
+}

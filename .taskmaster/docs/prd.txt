@@ -1,0 +1,216 @@
+# CacheService Extraction Project - Product Requirements Document
+## **🚀 IMPROVED: Native LangChain Caching Integration**
+
+## Project Overview
+Extract the caching functionality from the monolithic `universal_rag_lcel.py` file into a standalone, reusable system that **leverages LangChain's native caching infrastructure** rather than building custom cache logic from scratch.
+
+## Background
+The current Universal RAG Chain contains a 5,626-line monolithic file with caching logic scattered across multiple classes and methods. **However, instead of rebuilding this logic, we should leverage LangChain's battle-tested caching ecosystem** including semantic caching, native TTL support, and existing cache backends.
+
+**Key Insight from LangChain Documentation:**
+- LangChain provides 20+ native cache implementations including semantic caching
+- Native TTL support with `timedelta` parameters
+- `set_llm_cache()` global function for LLM-level caching
+- Chain-level caching with `.with_cache()` methods
+- Semantic similarity matching instead of exact key matching
+
+## Goals
+1. **Leverage Native LangChain Infrastructure**: Use existing cache classes instead of custom implementations
+2. **Semantic Caching for Casino Intelligence**: Use similarity matching for casino research queries
+3. **Multi-Layer Caching Strategy**: LLM + Chain + RAG response caching
+4. **Casino-Specific Isolation**: Add thin layer for casino name isolation
+5. **Zero Breaking Changes**: Maintain compatibility during migration
+6. **Performance Excellence**: Leverage battle-tested cache backends
+
+## Success Criteria
+- ✅ Extends LangChain's native semantic cache classes (RedisSemanticCache, etc.)
+- ✅ Uses native TTL support with `timedelta` parameters
+- ✅ Integrates with `set_llm_cache()` for LLM-level caching
+- ✅ Implements chain-level caching with `.with_cache()`
+- ✅ Provides casino-specific isolation via custom cache keys
+- ✅ Supports semantic similarity matching (80%+ threshold)
+- ✅ Achieves 95%+ test coverage for casino-specific logic only
+- ✅ No performance regression vs current implementation
+
+## Technical Requirements
+
+### **🎯 Revised Architecture - Native LangChain Integration**
+
+#### **1. CasinoIntelligenceCache (Extends Native Semantic Cache)**
+```python
+class CasinoIntelligenceCache(RedisSemanticCache):
+    """Casino-aware semantic cache extending LangChain's native infrastructure"""
+    
+    def __init__(self, embedding, **kwargs):
+        super().__init__(
+            embedding=embedding,
+            score_threshold=0.8,  # 80% similarity threshold
+            ttl=timedelta(hours=24),  # Base TTL
+            **kwargs
+        )
+```
+
+#### **2. Multi-Layer Caching Strategy**
+- **Layer 1**: LLM Response Caching via `set_llm_cache()`
+- **Layer 2**: Chain-Level Caching via `.with_cache()`
+- **Layer 3**: RAG Response Caching for complex workflows
+- **Layer 4**: Research Data Caching for casino intelligence
+
+#### **3. TTLStrategy (Smart TTL Management)**
+```python
+TTL_MAPPING = {
+    QueryType.NEWS_UPDATE: timedelta(hours=2),
+    QueryType.PROMOTION_ANALYSIS: timedelta(hours=6),
+    QueryType.REGULATORY: timedelta(days=7),
+    QueryType.CASINO_REVIEW: timedelta(days=2)
+}
+```
+
+#### **4. SemanticKeyGenerator (Casino Isolation)**
+- Namespace cache keys by casino name
+- Semantic similarity for query matching
+- Integration with LangChain's embedding-based caching
+
+### **📁 Simplified File Structure**
+```
+src/
+├── services/
+│   ├── cache/
+│   │   ├── __init__.py
+│   │   ├── casino_cache.py           # CasinoIntelligenceCache
+│   │   ├── ttl_strategy.py           # Dynamic TTL management
+│   │   ├── semantic_keys.py          # Casino-aware key generation
+│   │   ├── caching_factory.py        # Cache creation utilities
+│   │   └── exceptions.py             # Cache-specific exceptions
+│   └── ...
+└── tests/
+    └── services/cache/
+        ├── test_casino_cache.py
+        ├── test_ttl_strategy.py
+        └── test_semantic_keys.py
+```
+
+### **🔗 LangChain Integration Patterns**
+
+#### **LLM-Level Caching**
+```python
+from langchain_core.globals import set_llm_cache
+
+# Set global LLM cache
+set_llm_cache(
+    CasinoIntelligenceCache(
+        embedding=embeddings,
+        redis_url="redis://localhost:6379",
+        score_threshold=0.8,
+        ttl=timedelta(hours=24)
+    )
+)
+```
+
+#### **Chain-Level Caching**
+```python
+# Cache expensive research operations
+research_chain = (
+    create_research_pipeline()
+    .with_cache(ttl=timedelta(hours=6))
+)
+
+# Cache article generation
+article_chain = (
+    create_article_pipeline()
+    .with_cache(ttl=timedelta(days=1))
+)
+```
+
+#### **LCEL Integration**
+```python
+# Caching is transparent to chain logic
+chain = (
+    RunnableLambda(validate_input)
+    | llm  # Automatically cached via set_llm_cache()
+    | RunnablePassthrough.assign(research=research_chain)  # Cached chain
+    | generate_article
+)
+```
+
+## Migration Strategy
+
+### **Phase 1: Native Cache Infrastructure (1-2 days)**
+- Research existing LangChain semantic cache implementations
+- Create `CasinoIntelligenceCache` extending appropriate base class
+- Implement TTL strategy using native `timedelta` support
+- Add casino-specific key namespacing
+
+### **Phase 2: Multi-Layer Integration (1 day)**
+- Set up LLM-level caching with `set_llm_cache()`
+- Add chain-level caching to research and article pipelines
+- Implement casino-specific cache isolation
+- Create migration utilities for seamless transition
+
+### **Phase 3: Legacy Replacement (1 day)**
+- Replace custom cache logic in Universal RAG Chain
+- Update LCEL chains to leverage native caching patterns
+- Remove deprecated custom cache code
+- Final integration testing and validation
+
+## **🎯 Key Improvements Over Original Plan**
+
+### **❌ Original Plan (Custom Everything):**
+- Custom `QueryAwareCacheEngine` (200+ lines of custom logic)
+- Custom `CacheKeyGenerator` (reinventing key generation)
+- Custom `TTLManager` (reimplementing TTL logic)
+- Custom storage and retrieval mechanisms
+- Custom statistics tracking
+- High maintenance overhead
+
+### **✅ Improved Plan (Native LangChain):**
+- Extend `RedisSemanticCache` or similar (20-30 lines of custom logic)
+- Use native `timedelta` TTL support
+- Leverage `set_llm_cache()` and `.with_cache()` patterns
+- Casino-specific logic as thin customization layer
+- Battle-tested performance and reliability
+- Much lower maintenance overhead
+
+## **Backend Selection Strategy**
+
+**Recommended:** `RedisSemanticCache` for production
+```python
+CasinoIntelligenceCache(
+    embedding=embeddings,
+    redis_url=os.getenv("REDIS_URL"),
+    score_threshold=0.8,
+    ttl=timedelta(hours=24)
+)
+```
+
+**Alternative:** Extend for Supabase (if Redis not available)
+```python
+class SupabaseSemanticCache(BaseCache):
+    # Custom implementation using our existing Supabase infrastructure
+```
+
+## Dependencies
+- **LangChain Core**: For native cache classes and patterns
+- **LangChain Community**: For `RedisSemanticCache` and other backends
+- **Redis**: For production semantic caching (recommended)
+- **Existing Models**: QueryAnalysis, RAGResponse (minimal changes)
+
+## Success Metrics
+- **Semantic Matching**: 80%+ similarity threshold for cache hits
+- **Cache Hit Rate**: 40%+ improvement over exact matching
+- **Performance**: Native LangChain performance (sub-10ms cache operations)
+- **Code Reduction**: 80%+ reduction in custom cache code
+- **Maintainability**: Leverage LangChain updates automatically
+- **Scalability**: Easy backend switching (Redis → MongoDB → etc.)
+
+## **🚀 Why This Approach is Superior**
+
+1. **Follows LangChain Best Practices Exactly**: Uses documented patterns from official docs
+2. **Leverages Battle-Tested Infrastructure**: Redis semantic caching is production-proven
+3. **Semantic Intelligence**: Similarity matching instead of exact key matching
+4. **Multi-Layer Optimization**: Different caching strategies for different content types
+5. **Future-Proof**: Automatic benefits from LangChain caching improvements
+6. **Lower Maintenance**: Much less custom code to maintain and debug
+7. **Better Integration**: Native LCEL compatibility out of the box
+
+This approach transforms the project from "building a custom cache system" to "intelligently extending LangChain's native caching for casino use cases" - a much more maintainable and scalable solution. 

@@ -1,0 +1,45 @@
+{
+  "id": "task-018",
+  "title": "LangSmith Tracing Integration",
+  "description": "Instrument every LCEL chain and LangGraph node with LangSmith tracing. Collect prompt inputs/outputs, retrieval contexts, error traces. Ensure full observability across multi-tenant workflows.",
+  "status": "pending",
+  "priority": "high",
+  "category": "phase5-observability",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:53:34.280901+00:00",
+  "updatedAt": "2025-08-24T07:53:34.280901+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:53:34.280901+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    }
+  ]
+}

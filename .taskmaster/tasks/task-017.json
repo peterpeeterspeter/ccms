@@ -1,0 +1,45 @@
+{
+  "id": "task-017",
+  "title": "LangGraph State Persistence & Multi-Tenant Context",
+  "description": "Implement LangGraph state persistence across runs. Ensure tenant context (tenant_id, voice, locale) flows through all nodes. Configure state to pick prompts and brand assets per tenant.",
+  "status": "pending",
+  "priority": "high",
+  "category": "phase4-workflow",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:53:17.493309+00:00",
+  "updatedAt": "2025-08-24T07:53:17.493309+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:53:17.493309+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    }
+  ]
+}

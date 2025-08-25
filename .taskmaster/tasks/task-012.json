@@ -1,0 +1,45 @@
+{
+  "id": "task-012",
+  "title": "Build Narrative Generation LCEL Chain",
+  "description": "Implement LCEL chain with {context}, {visuals}, {affiliate_meta} retrieval. Load prompt templates from /src/prompts/review_narrative_{locale}.txt. Generate world-class narrative-style content for affiliate sites.",
+  "status": "pending",
+  "priority": "critical",
+  "category": "phase2-content",
+  "estimatedHours": 0,
+  "actualHours": 0,
+  "createdAt": "2025-08-24T07:52:24.952512+00:00",
+  "updatedAt": "2025-08-24T07:52:24.952512+00:00",
+  "dueDate": null,
+  "assignee": null,
+  "tags": [],
+  "dependencies": [],
+  "blockers": [],
+  "requirements": {
+    "functional": [],
+    "technical": [],
+    "compliance": []
+  },
+  "acceptanceCriteria": [],
+  "technicalSpecs": {
+    "components": [],
+    "schemas": [],
+    "chains": [],
+    "tools": []
+  },
+  "testingRequirements": {
+    "unitTests": true,
+    "integrationTests": false,
+    "goldenEvals": true,
+    "langsmithTraces": true
+  },
+  "deliverables": [],
+  "notes": [],
+  "history": [
+    {
+      "timestamp": "2025-08-24T07:52:24.952512+00:00",
+      "action": "created",
+      "user": "taskmaster",
+      "details": "Task created"
+    }
+  ]
+}
