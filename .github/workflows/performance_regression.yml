@@ -71,7 +71,7 @@ jobs:
           fi
 
       - name: Upload baseline results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: baseline-performance-results
           path: baseline/tests/baseline-results.json
@@ -118,7 +118,7 @@ jobs:
           fi
 
       - name: Upload current results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: current-performance-results
           path: tests/current-results.json
@@ -342,7 +342,7 @@ jobs:
             });
 
       - name: Upload analysis results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: regression-analysis
