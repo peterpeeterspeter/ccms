@@ -138,7 +138,7 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Download performance results
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v5
         with:
           path: performance-results
 
@@ -369,7 +369,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download current results
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v5
         with:
           name: current-performance-results
           path: current-results
