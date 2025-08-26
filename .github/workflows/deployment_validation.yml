@@ -277,7 +277,7 @@ jobs:
             --tb=short
 
       - name: Upload smoke test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: smoke-test-results-${{ env.ENVIRONMENT }}
@@ -342,7 +342,7 @@ jobs:
           done
 
       - name: Upload performance results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: performance-validation-${{ env.ENVIRONMENT }}
@@ -494,7 +494,7 @@ jobs:
           cat deployment-report.md
 
       - name: Upload deployment report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deployment-report-${{ env.ENVIRONMENT }}
           path: deployment-report.md
