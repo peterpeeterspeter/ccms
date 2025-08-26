@@ -125,6 +125,17 @@ python scripts/discover_components.py --category tools
 
 ## 🎯 **Production Workflows**
 
+### **Getting Started - Clean System**
+
+This repository contains the **complete CCMS core system** built through multiple phases:
+
+**✅ Phase 1**: Supabase foundation infrastructure with pgvector support
+**✅ Phase 2**: Native LangChain LCEL implementation with advanced prompt system  
+**✅ Phase 3**: Component discovery system preventing rebuild duplication
+**✅ Phase 4**: Production pipeline with WordPress integration and screenshot capture
+
+**Note**: All test reviews and generated content have been excluded to maintain a clean, production-ready codebase.
+
 ### **Complete Casino Review Generation**
 ```python
 from src.chains.native_universal_rag_lcel import NativeUniversalRAGChain

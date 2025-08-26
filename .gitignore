@@ -239,4 +239,55 @@ content_drafts/
 
 # WordPress Publishing
 wp_uploads/
-media_cache/ 
+media_cache/
+
+# ===================================
+# CCMS Generated Content & Test Reviews
+# ===================================
+*casino*review*.md
+*casino*review*.html
+*casino*review*.json
+*betway*
+*viage*
+*napoleon*
+*mr_vegas*
+*crashino*
+*arrise*
+*trustdice*
+*bitcasino*
+*777_casino*
+*blitz_casino*
+*bwin_casino*
+*coinflip*
+
+# Review Testing Files
+run_*_review.py
+*_review_demo.py
+*_comprehensive_demo.py
+*_direct_test.py
+*_complete_pipeline.py
+create_*_review.py
+publish_*_review.py
+show_*review*.py
+*_automated_production.py
+
+# Generated Screenshots & Media
+.playwright-mcp/*.png
+*casino*.png
+*vegas*.png
+
+# Generated WordPress Content
+*wordpress*.xml
+*wordpress*.html
+*wordpress*.json
+
+# Production Test Runs
+*production_*.json
+*production_*.py
+*_production_*.json
+
+# Complete Demo Files
+complete_*_casino_*.py
+viage_*.py
+universal_casino_*.py
+use_universal_casino_*.py 
