@@ -101,9 +101,7 @@ class OptimizedResearchPipeline:
         
         # Initialize vector store for intelligent indexing
         try:
-            self.vector_store = AgenticSupabaseVectorStore(
-                embeddings=self.embeddings
-            )
+            self.vector_store = AgenticSupabaseVectorStore()
         except Exception as e:
             logger.warning(f"⚠️ Vector store initialization failed: {e}")
             self.vector_store = None

@@ -194,7 +194,7 @@ class AgenticSupabaseVectorStore:
         # Initialize native LangChain SupabaseVectorStore
         self.vectorstore = SupabaseVectorStore(
             client=self.supabase_client,
-            embeddings=self.embeddings,
+            embedding=self.embeddings,
             table_name=self.table_name,
             query_name=self.query_name
         )
