@@ -122,7 +122,8 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
     
     # LCEL-COMPLIANT: Load existing comprehensive research using proper tool invocation
     try:
-        from src.tools.real_supabase_research_tool import RealSupabaseResearchTool
+        from src.tools.supabase_research_get_tool import SupabaseResearchGetTool
+        from src.tools.supabase_research_store_tool import SupabaseResearchStoreTool
         from langchain_core.runnables import RunnableLambda, RunnableBranch
         from pydantic import BaseModel, Field
         from typing import Optional, Dict, Any, Union
@@ -159,9 +160,9 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
             support_hours: Optional[str] = Field(default=None, description="Support hours")
             support_methods: Optional[list[str]] = Field(default=None, description="Support methods")
             
-            # Security information (no fabricated certifications)
-            encryption: Optional[str] = Field(default=None, description="Encryption type")
-            fair_gaming: Optional[str] = Field(default=None, description="Fair gaming certification")
+            # Security information (booleans, not prose)
+            ssl_cert_present: Optional[bool] = Field(default=None, description="SSL certificate present")
+            third_party_audited: Optional[bool] = Field(default=None, description="Third party audit status")
             
             # Trustworthiness
             parent_company: Optional[str] = Field(default=None, description="Parent company")
@@ -172,12 +173,20 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
             # Research metadata
             research_quality: Dict[str, Any] = Field(default_factory=dict, description="Quality metadata")
             provenance: Dict[str, list[str]] = Field(default_factory=dict, description="Data provenance")
+            
+            def compute_field_extraction_count(self) -> int:
+                """Compute actual non-null field count dynamically"""
+                non_null_count = 0
+                for field_name, field_value in self.model_dump().items():
+                    if field_name not in ['research_quality', 'provenance'] and field_value is not None:
+                        non_null_count += 1
+                return non_null_count
         
         # LCEL Chain for loading existing research
         def fetch_existing_research(input_data: Dict[str, str]) -> Dict[str, Any]:
             """LCEL-compatible function for fetching research"""
-            tool = RealSupabaseResearchTool()
-            result = tool.invoke({  # Use .invoke() not ._run()
+            get_tool = SupabaseResearchGetTool()
+            result = get_tool.invoke({  # Use .invoke() not ._run()
                 "casino_slug": input_data["casino_slug"],
                 "locale": input_data["locale"]
             })
@@ -285,18 +294,24 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
             retrieval_system = MultiTenantRetrievalSystem(vector_store=vector_store)
             
             def retrieve_documents(input_data: Dict[str, Any]) -> Dict[str, Any]:
-                # Execute retrieval (no asyncio.run - make it sync)
-                result = retrieval_system.retrieve_sync(  # Assume sync version exists
-                    query=input_data["query"],
-                    tenant_id=input_data.get("tenant_id", "default"),
-                    brand=input_data.get("brand_name", "default"),
-                    locale=input_data.get("locale", "en-GB"),
-                    voice=input_data.get("voice_profile", "professional"),
-                    content_types=["casino_research", "regulatory", "gaming", "compliance"],
-                    limit=50,
-                    similarity_threshold=0.6,
-                    retrieval_type="multi_query"
-                )
+                # Create LCEL-compatible async bridge (proper pattern)
+                import asyncio
+                
+                async def async_retrieve():
+                    return await retrieval_system.retrieve(
+                        query=input_data["query"],
+                        tenant_id=input_data.get("tenant_id", "default"),
+                        brand=input_data.get("brand_name", "default"),
+                        locale=input_data.get("locale", "en-GB"),
+                        voice=input_data.get("voice_profile", "professional"),
+                        content_types=["casino_research", "regulatory", "gaming", "compliance"],
+                        limit=50,
+                        similarity_threshold=0.6,
+                        retrieval_type="multi_query"
+                    )
+                
+                # Run async function in event loop (proper async bridge)
+                result = asyncio.run(async_retrieve())
                 return {"retrieval_result": result, "input": input_data}
             
             return RunnableLambda(retrieve_documents)
@@ -327,8 +342,8 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
                 llm = ChatOpenAI(
                     model="gpt-4o", 
                     temperature=0.1,  # ≤0.3 for determinism
-                    top_p=1.0,
-                    seed=42  # Reproducible
+                    top_p=1.0
+                    # Note: seed parameter not supported in current LangChain version
                 )
                 
                 comprehensive_chain = create_comprehensive_research_chain(retriever, llm)
@@ -354,7 +369,7 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
                     launch_year = datetime.now().year - comprehensive_result.trustworthiness.years_in_operation
                 
                 return SafeResearchData(
-                    casino_name=comprehensive_result.trustworthiness.parent_company or casino_name,
+                    casino_name=casino_name,  # Keep actual casino name, not parent company
                     
                     # License (nullable, no fabrication)
                     license_primary=comprehensive_result.trustworthiness.license_authorities[0] if comprehensive_result.trustworthiness.license_authorities else None,
@@ -382,9 +397,9 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
                     support_hours=None,  # Let QA determine from actual data
                     support_methods=None,  # Let QA determine from actual data
                     
-                    # Security (no fabricated certifications)
-                    encryption=None if not comprehensive_result.compliance.ssl_certificate else "SSL encryption verified",
-                    fair_gaming=None if not comprehensive_result.compliance.third_party_audits else "third party audited",
+                    # Security (booleans, not prose)
+                    ssl_cert_present=comprehensive_result.compliance.ssl_certificate if hasattr(comprehensive_result.compliance, 'ssl_certificate') else None,
+                    third_party_audited=comprehensive_result.compliance.third_party_audits if hasattr(comprehensive_result.compliance, 'third_party_audits') else None,
                     
                     # Trustworthiness
                     parent_company=comprehensive_result.trustworthiness.parent_company,
@@ -393,10 +408,10 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
                     trustpilot_score=comprehensive_result.trustworthiness.trustpilot_score,
                     
                     research_quality={
-                        "field_extraction_count": 95,  # Full comprehensive extraction
+                        "field_extraction_count": 0,  # Will be computed dynamically
                         "comprehensive_categories": 8,
                         "research_method": "comprehensive_research_chain_lcel",
-                        "model_config": "gpt-4o_temp-0.1_seed-42"
+                        "model_config": "gpt-4o_temp-0.1_top-p-1.0"
                     },
                     provenance={
                         "data_source": "comprehensive_research_chain",
@@ -404,6 +419,12 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
                         "verification_status": "pending_qa_validation"  # Let QA chain verify
                     }
                 )
+                
+                # Compute field extraction count dynamically after creation
+                actual_field_count = safe_result.compute_field_extraction_count()
+                safe_result.research_quality["field_extraction_count"] = actual_field_count
+                
+                return safe_result
             
             return RunnableLambda(transform_to_safe_data)
         
@@ -411,9 +432,8 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
         def create_storage_chain():
             def store_research(safe_data: SafeResearchData) -> SafeResearchData:
                 try:
-                    storage_tool = RealSupabaseResearchTool()
-                    storage_result = storage_tool.invoke({  # Use .invoke()
-                        "operation": "store",
+                    store_tool = SupabaseResearchStoreTool()
+                    storage_result = store_tool.invoke({  # Use .invoke() - single-purpose tool
                         "casino_slug": state["casino_slug"],
                         "locale": state["locale"],
                         "research_data": safe_data.model_dump(),

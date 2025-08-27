@@ -156,7 +156,7 @@ result = await chain.research_and_publish_casino("Betway Casino")
 from src.tools.real_supabase_research_tool import real_supabase_research_tool
 
 # Get structured intelligence
-research = real_supabase_research_tool._run("betway", "en-US")
+research = real_supabase_research_tool.invoke({"casino_slug": "betway", "locale": "en-US"})
 print(f"Fields extracted: {research['total_fields']}")
 ```
 
