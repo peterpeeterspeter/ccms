@@ -43,6 +43,27 @@ class QualityScore(str, Enum):
     FAILED = "failed"
 
 
+class WorkflowStatus(str, Enum):
+    """Workflow execution status for content generation pipeline"""
+    PENDING = "pending"
+    IN_PROGRESS = "in_progress"
+    COMPLETED = "completed"
+    APPROVED = "approved"
+    REJECTED = "rejected"
+    NEEDS_IMPROVEMENT = "needs_improvement"
+    FAILED = "failed"
+
+
+class MediaType(str, Enum):
+    """Media asset types for content generation"""
+    SCREENSHOT = "screenshot"
+    PROMOTIONAL = "promotional"
+    INFOGRAPHIC = "infographic"
+    VIDEO = "video"
+    LOGO = "logo"
+    BANNER = "banner"
+
+
 class ComplianceStatus(str, Enum):
     """Compliance validation status"""
     PASSED = "passed"

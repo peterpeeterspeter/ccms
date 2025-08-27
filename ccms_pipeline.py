@@ -23,6 +23,13 @@ import time
 from typing import Dict, Any, Optional
 from datetime import datetime
 
+# Load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    print("⚠️  python-dotenv not installed, skipping .env file loading")
+
 from langchain_core.runnables import (
     Runnable, RunnableLambda, RunnablePassthrough, 
     RunnableParallel, RunnableSequence
@@ -286,7 +293,7 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
         from src.integrations.supabase_vector_store import AgenticSupabaseVectorStore
         from langchain_openai import ChatOpenAI
         from langchain_core.runnables import RunnableSequence, RunnableLambda, RunnablePassthrough
-        from langchain.retrievers import VectorStoreRetriever
+        from langchain_core.vectorstores import VectorStoreRetriever
         
         # LCEL Chain: Multi-tenant retrieval as Runnable
         def create_retrieval_runnable():
@@ -527,9 +534,9 @@ def research_step(state: Dict[str, Any]) -> Dict[str, Any]:
                 "error": str(e)
             },
             provenance={
-                "data_source": "emergency_fallback",
+                "data_source": ["emergency_fallback"],
                 "extraction_timestamp": [str(time.time())],
-                "note": "comprehensive_research_failed"
+                "note": ["comprehensive_research_failed"]
             }
         )
         state["research_data"] = minimal_safe_data.model_dump()
@@ -1674,8 +1681,24 @@ def run_ccms_pipeline(
         )
 
 if __name__ == "__main__":
-    # Live execution with compliance skip for full pipeline - Betway Casino Review
-    result = run_ccms_pipeline("crashcasino", "betway", "en-GB", skip_compliance=True, dry_run=False)
+    import sys
+    
+    # Parse command line arguments
+    if len(sys.argv) >= 4:
+        casino_name = sys.argv[1]
+        locale = sys.argv[2] 
+        tenant = sys.argv[3]
+    else:
+        # Default values for quick testing
+        casino_name = "betway"
+        locale = "en-GB"
+        tenant = "crashcasino"
+        print(f"⚠️  Using defaults: {casino_name} {locale} {tenant}")
+    
+    print(f"🎰 Running CCMS Pipeline: {tenant}/{casino_name}/{locale}")
+    
+    # Live execution with compliance skip for full pipeline
+    result = run_ccms_pipeline(tenant, casino_name, locale, skip_compliance=True, dry_run=False)
     print(f"Pipeline Result: {result.success}")
     print(f"Post ID: {result.wordpress_post_id}")
     print(f"Duration: {result.total_duration_ms}ms")
