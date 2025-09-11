@@ -291,3 +291,7 @@ complete_*_casino_*.py
 viage_*.py
 universal_casino_*.py
 use_universal_casino_*.py 
+# Environment files with secrets
+.env.production
+.env.local
+.env.*.local

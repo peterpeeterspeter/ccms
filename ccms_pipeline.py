@@ -723,9 +723,15 @@ def content_step(state: Dict[str, Any]) -> Dict[str, Any]:
                 }
             )
             
-            # Create and execute narrative generation chain
+            # Create and execute narrative generation chain with proper context
             narrative_chain = create_narrative_generation_chain(tenant_config)
-            narrative_result = narrative_chain.invoke(narrative_input.dict())
+            
+            # Ensure narrative input has all required tenant context
+            narrative_input_dict = narrative_input.dict()
+            narrative_input_dict["tenant_id"] = tenant_config.tenant_id  # Explicit tenant_id
+            narrative_input_dict["locale"] = tenant_config.locale  # Explicit locale
+            
+            narrative_result = narrative_chain.invoke(narrative_input_dict)
             
             # Extract content from proper narrative chain result
             if hasattr(narrative_result, 'generated_content'):
@@ -750,11 +756,28 @@ def content_step(state: Dict[str, Any]) -> Dict[str, Any]:
         except Exception as narrative_error:
             logger.error(f"❌ Even fallback narrative generation failed: {narrative_error}")
             
-            # Final fallback to basic content generator
+            # Final fallback to basic content generator with proper tenant context
             logger.warning("🔄 Final fallback to basic content generator")
             try:
+                # Import basic content generator with tenant context support
                 from src.tools.comprehensive_content_generator import generate_comprehensive_content
-                draft = generate_comprehensive_content(research, casino_name, brand_voice)
+                
+                # Create basic content with tenant configuration context
+                tenant_context = {
+                    "tenant_id": config["tenant_info"]["tenant_id"],
+                    "brand_name": config["tenant_info"]["name"],
+                    "locale": state["locale"],
+                    "voice_profile": brand_voice.get("tone", "professional"),
+                    "target_audience": brand_voice.get("audience", "casino_players")
+                }
+                
+                # Generate content with tenant context
+                draft = generate_comprehensive_content(
+                    research_data=research, 
+                    casino_name=casino_name, 
+                    brand_voice=brand_voice,
+                    tenant_context=tenant_context  # Pass tenant context
+                )
                 word_count = sum(len(str(section).split()) for section in draft.values())
                 
                 state["content_draft"] = draft
@@ -762,10 +785,11 @@ def content_step(state: Dict[str, Any]) -> Dict[str, Any]:
                     "event": "basic_content_generation_fallback", 
                     "timestamp": time.time(), 
                     "word_count": word_count,
+                    "tenant_id": tenant_context["tenant_id"],  # Track tenant
                     "enhanced_error": str(e),
                     "narrative_error": str(narrative_error)
                 })
-                logger.info(f"✅ Basic content generator fallback: ~{word_count} words")
+                logger.info(f"✅ Basic content generator fallback: ~{word_count} words (tenant: {tenant_context['tenant_id']})")
                 return state
                 
             except Exception as final_error:

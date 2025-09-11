@@ -1,0 +1,88 @@
+# Casino Review Orchestrator Configuration
+# Feature flags to control which steps are included in the workflow
+
+# Basic configuration - enable research only initially
+basic:
+  enable_research: true
+  enable_screenshot: false
+  enable_content: false
+  enable_qa: false
+  enable_publish: false
+  max_retries: 0
+
+# Research + Screenshots
+research_screenshots:
+  enable_research: true
+  enable_screenshot: true
+  enable_content: false
+  enable_qa: false
+  enable_publish: false
+  max_retries: 1
+
+# Content generation pipeline
+content_pipeline:
+  enable_research: true
+  enable_screenshot: true
+  enable_content: true
+  enable_qa: false
+  enable_publish: false
+  max_retries: 1
+
+# Full QA validation pipeline
+qa_pipeline:
+  enable_research: true
+  enable_screenshot: true
+  enable_content: true
+  enable_qa: true
+  enable_publish: false
+  max_retries: 2
+
+# Production pipeline - all steps enabled
+production:
+  enable_research: true
+  enable_screenshot: true
+  enable_content: true
+  enable_qa: true
+  enable_publish: true
+  max_retries: 2
+
+# Development/testing configurations
+research_only:
+  enable_research: true
+  enable_screenshot: false
+  enable_content: false
+  enable_qa: false
+  enable_publish: false
+  max_retries: 0
+
+screenshots_only:
+  enable_research: false
+  enable_screenshot: true
+  enable_content: false
+  enable_qa: false
+  enable_publish: false
+  max_retries: 0
+
+content_only:
+  enable_research: false
+  enable_screenshot: false
+  enable_content: true
+  enable_qa: false
+  enable_publish: false
+  max_retries: 0
+
+qa_only:
+  enable_research: false
+  enable_screenshot: false
+  enable_content: false
+  enable_qa: true
+  enable_publish: false
+  max_retries: 0
+
+publish_only:
+  enable_research: false
+  enable_screenshot: false
+  enable_content: false
+  enable_qa: false
+  enable_publish: true
+  max_retries: 0

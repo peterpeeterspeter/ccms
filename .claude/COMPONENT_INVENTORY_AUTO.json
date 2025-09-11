@@ -1,6 +1,6 @@
 {
-  "discovery_date": "2025-08-26T21:41:12.951698",
-  "total_components": 164,
+  "discovery_date": "2025-08-27T20:09:08.505503",
+  "total_components": 170,
   "categories": {
     "tools": [
       {
@@ -24,13 +24,13 @@
         ],
         "functions": [],
         "imports": [
-          "os",
-          "typing",
-          "logging",
+          "langchain.tools",
           "pydantic",
-          "dotenv",
+          "typing",
           "supabase",
-          "langchain.tools"
+          "os",
+          "logging",
+          "dotenv"
         ],
         "features": [
           "supabase_integration",
@@ -61,12 +61,12 @@
         ],
         "functions": [],
         "imports": [
-          "typing",
-          "logging",
-          "base64",
           "requests",
+          "base64",
+          "langchain.tools",
           "pydantic",
-          "langchain.tools"
+          "typing",
+          "logging"
         ],
         "features": [
           "lcel_composition",
@@ -97,14 +97,14 @@
         ],
         "functions": [],
         "imports": [
-          "os",
-          "typing",
-          "logging",
           "requests",
+          "langchain.tools",
           "pydantic",
-          "dotenv",
+          "typing",
           "time",
-          "langchain.tools"
+          "os",
+          "logging",
+          "dotenv"
         ],
         "features": [
           "firecrawl_api",
@@ -135,14 +135,14 @@
         ],
         "functions": [],
         "imports": [
-          "typing",
-          "logging",
-          "urllib.parse",
           "requests",
+          "urllib.parse",
+          "langchain.tools",
           "pydantic",
-          "pathlib",
+          "typing",
           "time",
-          "langchain.tools"
+          "logging",
+          "pathlib"
         ],
         "features": [
           "lcel_composition",
@@ -171,13 +171,13 @@
         ],
         "functions": [],
         "imports": [
-          "os",
-          "typing",
-          "logging",
+          "langchain.tools",
           "pydantic",
-          "dotenv",
+          "typing",
           "supabase",
-          "langchain.tools"
+          "os",
+          "logging",
+          "dotenv"
         ],
         "features": [
           "lcel_composition",
@@ -229,14 +229,14 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "langchain_core.prompts",
-          "langchain_core.tools",
-          "langchain_community.tools",
           "langchain_core.output_parsers",
-          "langchain_openai",
-          "langchain_community.document_loaders"
+          "langchain_core.tools",
+          "typing",
+          "langchain_community.tools",
+          "langchain_community.document_loaders",
+          "os",
+          "langchain_core.prompts",
+          "langchain_openai"
         ],
         "features": [
           "lcel_composition",
@@ -268,12 +268,12 @@
         ],
         "functions": [],
         "imports": [
-          "os",
-          "typing",
-          "logging",
+          "langchain.tools",
           "pydantic",
+          "typing",
           "time",
-          "langchain.tools"
+          "os",
+          "logging"
         ],
         "features": [
           "screenshot_capture",
@@ -303,13 +303,13 @@
         ],
         "functions": [],
         "imports": [
-          "re",
-          "typing",
-          "logging",
           "urllib.parse",
           "requests",
+          "langchain.tools",
           "pydantic",
-          "langchain.tools"
+          "typing",
+          "logging",
+          "re"
         ],
         "features": [
           "lcel_composition",
@@ -338,11 +338,11 @@
         ],
         "functions": [],
         "imports": [
-          "typing",
-          "logging",
           "datetime",
+          "langchain.tools",
           "pydantic",
-          "langchain.tools"
+          "typing",
+          "logging"
         ],
         "features": [
           "lcel_composition",
@@ -373,11 +373,11 @@
         ],
         "functions": [],
         "imports": [
-          "typing",
-          "logging",
-          "json",
+          "langchain.tools",
           "pydantic",
-          "langchain.tools"
+          "json",
+          "typing",
+          "logging"
         ],
         "features": [
           "lcel_composition",
@@ -388,6 +388,40 @@
           "async_support"
         ],
         "lines_of_code": 259
+      },
+      {
+        "name": "supabase_research_get_tool",
+        "path": "src/tools/supabase_research_get_tool.py",
+        "category": "tool",
+        "size": 2926,
+        "last_modified": "2025-08-27T15:58:07.704709",
+        "module_docstring": "\ud83d\udd0d SUPABASE RESEARCH GET TOOL - CLAUDE.md COMPLIANT\n==================================================\n\nSingle-purpose tool for fetching comprehensive casino research from Supabase.\nFollows CLAUDE.md principle: \"Tools should do one thing.\"\n\nThis tool ONLY fetches data. For storing, use supabase_research_store_tool.py",
+        "classes": [
+          {
+            "name": "SupabaseResearchGetInput",
+            "line": 24,
+            "docstring": "Input schema for Supabase research GET operations"
+          },
+          {
+            "name": "SupabaseResearchGetTool",
+            "line": 32,
+            "docstring": "\ud83d\udd0d Single-purpose tool for fetching comprehensive casino research from Supabase\n\nCLAUDE.md compliant: Does one thing (fetch), uses proper tool patterns"
+          }
+        ],
+        "functions": [],
+        "imports": [
+          "real_supabase_research_tool",
+          "pydantic",
+          "langchain_core.tools",
+          "typing",
+          "os",
+          "logging"
+        ],
+        "features": [
+          "supabase_integration",
+          "research_functionality"
+        ],
+        "lines_of_code": 86
       },
       {
         "name": "wordpress_post_update_tool",
@@ -410,12 +444,12 @@
         ],
         "functions": [],
         "imports": [
-          "typing",
-          "logging",
-          "base64",
           "requests",
+          "base64",
+          "langchain.tools",
           "pydantic",
-          "langchain.tools"
+          "typing",
+          "logging"
         ],
         "features": [
           "lcel_composition",
@@ -440,14 +474,49 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging"
+          "logging",
+          "typing"
         ],
         "features": [
           "publishing",
           "has_tests"
         ],
         "lines_of_code": 379
+      },
+      {
+        "name": "supabase_research_store_tool",
+        "path": "src/tools/supabase_research_store_tool.py",
+        "category": "tool",
+        "size": 4030,
+        "last_modified": "2025-08-27T15:58:11.945949",
+        "module_docstring": "\ud83d\udcbe SUPABASE RESEARCH STORE TOOL - CLAUDE.md COMPLIANT\n====================================================\n\nSingle-purpose tool for storing comprehensive casino research to Supabase.\nFollows CLAUDE.md principle: \"Tools should do one thing.\"\n\nThis tool ONLY stores data. For fetching, use supabase_research_get_tool.py",
+        "classes": [
+          {
+            "name": "SupabaseResearchStoreInput",
+            "line": 23,
+            "docstring": "Input schema for Supabase research STORE operations"
+          },
+          {
+            "name": "SupabaseResearchStoreTool",
+            "line": 31,
+            "docstring": "\ud83d\udcbe Single-purpose tool for storing comprehensive casino research to Supabase\n\nCLAUDE.md compliant: Does one thing (store), uses proper tool patterns"
+          }
+        ],
+        "functions": [],
+        "imports": [
+          "pydantic",
+          "typing",
+          "langchain_core.tools",
+          "supabase",
+          "time",
+          "os",
+          "logging"
+        ],
+        "features": [
+          "supabase_integration",
+          "research_functionality"
+        ],
+        "lines_of_code": 111
       },
       {
         "name": "wordpress_enhanced_publisher",
@@ -470,14 +539,14 @@
         ],
         "functions": [],
         "imports": [
-          "typing",
-          "logging",
-          "json",
-          "base64",
           "requests",
+          "base64",
+          "langchain.tools",
+          "json",
+          "typing",
           "pydantic",
           "time",
-          "langchain.tools"
+          "logging"
         ],
         "features": [
           "lcel_composition",
@@ -509,13 +578,13 @@
         ],
         "functions": [],
         "imports": [
+          "requests",
+          "base64",
+          "langchain.tools",
+          "pydantic",
           "typing",
           "logging",
-          "base64",
-          "requests",
-          "pydantic",
-          "pathlib",
-          "langchain.tools"
+          "pathlib"
         ],
         "features": [
           "lcel_composition",
@@ -569,16 +638,16 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "logging",
-          "PIL",
-          "aiohttp",
           "asyncio",
           "datetime",
-          "io",
-          "dataclasses",
           "uuid",
+          "dataclasses",
+          "typing",
+          "io",
+          "logging",
+          "PIL",
+          "re",
+          "aiohttp",
           "bs4"
         ],
         "features": [
@@ -645,18 +714,18 @@
           }
         ],
         "imports": [
-          "re",
+          "asyncio",
+          "urllib.parse",
+          "datetime",
+          "sys",
+          "wordpress_publisher",
+          "json",
           "typing",
           "os",
           "logging",
-          "json",
-          "asyncio",
-          "datetime",
-          "urllib.parse",
-          "wordpress_publisher",
-          "sys",
-          "dataclasses",
-          "schemas.casino_intelligence_schema"
+          "re",
+          "schemas.casino_intelligence_schema",
+          "dataclasses"
         ],
         "features": [
           "wordpress_api",
@@ -715,19 +784,19 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "utils.supabase_client",
-          "logging",
-          "langchain_core.runnables",
-          "hashlib",
           "asyncio",
+          "utils.supabase_client",
           "datetime",
           "base64",
-          "pydantic",
-          "langchain.schema.runnable",
           "langchain_community.tools.browserbase",
-          "langchain.tools"
+          "langchain.tools",
+          "pydantic",
+          "typing",
+          "os",
+          "hashlib",
+          "logging",
+          "langchain.schema.runnable",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -803,16 +872,16 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "PIL",
-          "aiofiles",
-          "aiohttp",
           "asyncio",
-          "io",
-          "base64",
           "requests",
-          "time"
+          "base64",
+          "typing",
+          "io",
+          "time",
+          "os",
+          "aiofiles",
+          "PIL",
+          "aiohttp"
         ],
         "features": [
           "wordpress_api",
@@ -943,24 +1012,24 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "mimetypes",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
-          "json",
-          "hashlib",
+          "requests",
+          "base64",
           "datetime",
           "src.schemas.review_doc",
+          "src.chains.visual_content_pipeline",
           "langchain_core.output_parsers",
-          "base64",
-          "requests",
-          "pydantic",
-          "pathlib",
+          "re",
           "src.workflows.enhanced_content_generation_workflow",
+          "json",
+          "typing",
+          "pydantic",
           "langchain_openai",
-          "src.chains.visual_content_pipeline"
+          "hashlib",
+          "langchain_core.prompts",
+          "logging",
+          "mimetypes",
+          "pathlib",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -1040,22 +1109,22 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "logging",
-          "langchain.schema",
-          "langchain.output_parsers",
-          "langchain_core.runnables",
-          "schemas.casino_intelligence_schema",
-          "json",
           "asyncio",
           "datetime",
           "langchain_core.output_parsers",
           "langchain.prompts",
+          "langchain.output_parsers",
           "wordpress_publisher",
-          "dataclasses",
+          "json",
+          "typing",
+          "langchain.chains",
+          "logging",
+          "langchain.schema",
+          "re",
+          "schemas.casino_intelligence_schema",
           "pathlib",
-          "langchain.chains"
+          "dataclasses",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -1162,30 +1231,30 @@
           }
         ],
         "imports": [
+          "collections",
+          "json",
           "typing",
-          "logging",
-          "enum",
+          "supabase",
+          "langchain.schema",
           "asyncio",
           "urllib.parse",
-          "concurrent.futures",
-          "langchain.tools",
-          "io",
-          "uuid",
-          "langchain.callbacks.manager",
-          "supabase",
-          "json",
-          "hashlib",
-          "datetime",
           "base64",
-          "requests",
-          "dataclasses",
-          "collections",
-          "os",
+          "enum",
+          "hashlib",
+          "logging",
           "PIL",
-          "langchain.schema",
-          "aiohttp",
+          "requests",
+          "uuid",
+          "langchain.tools",
+          "concurrent.futures",
+          "time",
+          "dataclasses",
+          "datetime",
+          "langchain.callbacks.manager",
           "pydantic",
-          "time"
+          "io",
+          "os",
+          "aiohttp"
         ],
         "features": [
           "supabase_integration",
@@ -1281,23 +1350,23 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "logging",
-          "langchain_core.documents",
-          "langchain_core.prompts",
-          "supabase.client",
-          "langchain_community.vectorstores",
-          "langchain_core.callbacks",
-          "langchain.retrievers",
-          "langchain_core.output_parsers",
-          "langchain_core.retrievers",
+          "langchain_core.vectorstores",
           "schemas.review_doc",
+          "langchain_core.output_parsers",
+          "langchain.retrievers",
+          "langchain_core.documents",
+          "langchain_core.callbacks",
           "pydantic",
-          "schemas.casino_intelligence_schema",
-          "langchain_openai",
+          "typing",
+          "langchain_community.vectorstores",
           "numpy",
-          "langchain_core.vectorstores"
+          "os",
+          "langchain_core.prompts",
+          "logging",
+          "supabase.client",
+          "langchain_openai",
+          "schemas.casino_intelligence_schema",
+          "langchain_core.retrievers"
         ],
         "features": [
           "lcel_composition",
@@ -1353,16 +1422,16 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
-          "langchain_wordpress_tool",
           "asyncio",
-          "langchain_core.tools",
           "langchain_core.output_parsers",
+          "langchain_wordpress_tool",
           "traceback",
-          "langchain_openai"
+          "typing",
+          "langchain_core.tools",
+          "langchain_core.prompts",
+          "logging",
+          "langchain_openai",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -1484,17 +1553,17 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "logging",
-          "enum",
+          "heapq",
           "asyncio",
-          "playwright_screenshot_engine",
           "urllib.parse",
-          "dataclasses",
           "uuid",
+          "enum",
+          "typing",
           "time",
-          "heapq"
+          "logging",
+          "re",
+          "dataclasses",
+          "playwright_screenshot_engine"
         ],
         "features": [
           "lcel_composition",
@@ -1870,27 +1939,27 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
           "random",
-          "enum",
+          "json",
+          "typing",
+          "supabase",
           "asyncio",
           "urllib.parse",
-          "playwright.async_api",
-          "traceback",
-          "uuid",
-          "supabase",
-          "hashlib",
-          "json",
-          "datetime",
           "base64",
-          "dataclasses",
+          "enum",
+          "hashlib",
+          "logging",
           "heapq",
-          "contextlib",
-          "os",
-          "pathlib",
           "psutil",
-          "time"
+          "uuid",
+          "time",
+          "pathlib",
+          "dataclasses",
+          "contextlib",
+          "datetime",
+          "traceback",
+          "playwright.async_api",
+          "os"
         ],
         "features": [
           "supabase_integration",
@@ -1998,35 +2067,35 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "asyncio",
-          "playwright_screenshot_engine",
-          "urllib.parse",
-          "markdown",
-          "langchain_openai",
-          "langchain_core.prompts",
-          "traceback",
-          "io",
-          "uuid",
-          "supabase",
-          "mimetypes",
-          "langchain_core.runnables",
           "json",
-          "datetime",
-          "langchain_core.output_parsers",
+          "typing",
+          "supabase",
+          "bs4",
+          "playwright_screenshot_engine",
+          "asyncio",
+          "urllib.parse",
           "base64",
+          "logging",
+          "PIL",
+          "langchain_openai",
+          "langchain_core.runnables",
+          "langchain_core.output_parsers",
+          "uuid",
+          "time",
+          "pathlib",
           "dataclasses",
+          "datetime",
+          "markdown",
+          "traceback",
+          "pydantic",
+          "mimetypes",
+          "io",
+          "os",
+          "langchain_core.prompts",
+          "re",
           "schemas.casino_intelligence_schema",
           "browser_pool_manager",
-          "os",
-          "re",
-          "PIL",
-          "aiohttp",
-          "pydantic",
-          "pathlib",
-          "bs4",
-          "time"
+          "aiohttp"
         ],
         "features": [
           "langchain_runnable",
@@ -2081,22 +2150,22 @@
           }
         ],
         "imports": [
-          "os",
-          "re",
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.callbacks",
-          "json",
           "asyncio",
-          "datetime",
-          "aiohttp",
           "urllib.parse",
           "base64",
-          "langchain_core.tools",
+          "datetime",
           "langchain_core.output_parsers",
           "markdown",
-          "pydantic"
+          "langchain_core.callbacks",
+          "json",
+          "typing",
+          "pydantic",
+          "langchain_core.tools",
+          "os",
+          "langchain_core.prompts",
+          "logging",
+          "re",
+          "aiohttp"
         ],
         "features": [
           "lcel_composition",
@@ -2195,16 +2264,16 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "logging",
-          "integrations.wordpress_publisher",
-          "json",
           "asyncio",
           "datetime",
           "wordpress_publisher",
-          "dataclasses",
-          "schemas.casino_intelligence_schema"
+          "integrations.wordpress_publisher",
+          "json",
+          "typing",
+          "logging",
+          "re",
+          "schemas.casino_intelligence_schema",
+          "dataclasses"
         ],
         "features": [
           "wordpress_api",
@@ -2272,45 +2341,45 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
+          "langchain.retrievers",
           "langchain_core.documents",
           "langchain_core.callbacks",
-          "asyncio",
-          "langchain.memory",
-          "langchain_core.chat_history",
-          "dotenv",
-          "langchain_openai",
-          "langchain.chains.summarize",
-          "langchain_redis.cache",
-          "langchain_community.document_loaders",
-          "langchain_core.prompts",
-          "langchain_core.messages",
-          "langchain.retrievers.multi_vector",
-          "langchain.retrievers.self_query.base",
-          "supabase",
-          "langchain_core.runnables.history",
-          "langchain_core.runnables",
-          "langchain_community.vectorstores",
-          "langchain.retrievers.document_compressors",
-          "json",
-          "datetime",
-          "langchain_core.output_parsers",
           "langchain_community.vectorstores.supabase",
-          "langchain.retrievers",
-          "langchain_text_splitters",
-          "base64",
-          "requests",
+          "json",
+          "typing",
+          "langchain_core.messages",
+          "langchain_community.vectorstores",
           "langchain.chains",
-          "schemas.casino_intelligence_schema",
-          "langchain_community.tools.tavily_search",
-          "os",
-          "langchain.chains.retrieval_qa.base",
-          "langchain_redis",
-          "pydantic",
-          "pathlib",
+          "supabase",
+          "langchain.retrievers.document_compressors",
+          "dotenv",
+          "langchain_text_splitters",
+          "langchain.chains.summarize",
+          "asyncio",
+          "base64",
+          "langchain.retrievers.multi_vector",
           "langchain_community.retrievers",
-          "langchain_core.globals"
+          "langchain_core.runnables.history",
+          "langchain.chains.retrieval_qa.base",
+          "logging",
+          "langchain_openai",
+          "langchain_core.chat_history",
+          "langchain_core.runnables",
+          "langchain.memory",
+          "langchain_redis.cache",
+          "langchain.retrievers.self_query.base",
+          "requests",
+          "langchain_core.output_parsers",
+          "langchain_community.tools.tavily_search",
+          "pathlib",
+          "datetime",
+          "pydantic",
+          "langchain_core.globals",
+          "os",
+          "langchain_core.prompts",
+          "langchain_community.document_loaders",
+          "schemas.casino_intelligence_schema",
+          "langchain_redis"
         ],
         "features": [
           "langchain_runnable",
@@ -2443,19 +2512,19 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.documents",
-          "langchain_core.runnables",
-          "src.chains.multi_tenant_retrieval_system",
-          "src.schemas.casino_intelligence_schema",
-          "src.schemas.review_doc",
           "datetime",
           "langchain_core.output_parsers",
+          "src.schemas.review_doc",
+          "langchain_core.documents",
+          "src.chains.multi_tenant_retrieval_system",
           "pydantic",
+          "typing",
+          "langchain_core.prompts",
+          "logging",
+          "langchain_openai",
           "pathlib",
-          "langchain_openai"
+          "src.schemas.casino_intelligence_schema",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -2500,14 +2569,14 @@
           }
         ],
         "imports": [
-          "typing",
-          "langchain_core.documents",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
           "asyncio",
           "langchain_core.output_parsers",
+          "langchain_core.documents",
+          "chains.native_casino_retriever",
+          "typing",
+          "langchain_core.prompts",
           "langchain_openai",
-          "chains.native_casino_retriever"
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -2568,19 +2637,19 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
-          "langchain_community.vectorstores",
-          "src.schemas.casino_intelligence_schema",
+          "langchain_text_splitters",
           "asyncio",
           "langchain_core.output_parsers",
-          "langchain_text_splitters",
-          "langchain_community.tools",
           "supabase",
+          "typing",
+          "langchain_community.vectorstores",
+          "langchain_community.tools",
+          "os",
+          "langchain_core.prompts",
+          "langchain_community.document_loaders",
           "langchain_openai",
-          "langchain_community.document_loaders"
+          "src.schemas.casino_intelligence_schema",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -2695,18 +2764,18 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
-          "langchain.chains.retrieval",
-          "langchain.chains.combine_documents",
-          "langchain_community.vectorstores",
           "asyncio",
           "datetime",
           "langchain_core.output_parsers",
           "pydantic",
-          "langchain_openai"
+          "typing",
+          "langchain_community.vectorstores",
+          "langchain_core.prompts",
+          "logging",
+          "langchain_openai",
+          "langchain.chains.combine_documents",
+          "langchain.chains.retrieval",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -2985,29 +3054,29 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.documents",
+          "collections",
           "langchain_core.callbacks",
+          "math",
           "random",
-          "enum",
+          "langchain_core.documents",
+          "json",
+          "typing",
           "asyncio",
-          "langchain_openai",
-          "langchain_core.prompts",
-          "langchain_anthropic",
           "statistics",
           "advanced_prompt_system",
-          "langchain_core.runnables",
+          "enum",
           "hashlib",
-          "json",
-          "datetime",
+          "logging",
+          "langchain_openai",
+          "langchain_core.runnables",
           "langchain_core.output_parsers",
+          "time",
           "dataclasses",
-          "collections",
-          "re",
-          "math",
+          "datetime",
+          "langchain_anthropic",
           "pydantic",
-          "time"
+          "langchain_core.prompts",
+          "re"
         ],
         "features": [
           "langchain_runnable",
@@ -3055,13 +3124,13 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "langchain_core.documents",
-          "supabase.client",
-          "langchain_community.vectorstores",
-          "langchain.chains.query_constructor.schema",
           "langchain.retrievers.self_query.base",
+          "langchain.chains.query_constructor.schema",
+          "langchain_core.documents",
+          "typing",
+          "langchain_community.vectorstores",
+          "os",
+          "supabase.client",
           "langchain_openai"
         ],
         "features": [
@@ -3107,18 +3176,18 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
+          "langchain.retrievers.self_query.base",
+          "langchain.chains.query_constructor.schema",
+          "langchain_core.output_parsers",
+          "asyncio",
           "langchain_core.documents",
+          "typing",
+          "langchain_community.vectorstores",
+          "os",
           "langchain_core.prompts",
           "supabase.client",
-          "langchain_community.vectorstores",
-          "langchain_core.runnables",
-          "langchain.chains.query_constructor.schema",
-          "asyncio",
-          "langchain_core.output_parsers",
-          "langchain.retrievers.self_query.base",
-          "langchain_openai"
+          "langchain_openai",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -3216,23 +3285,23 @@
           }
         ],
         "imports": [
-          "typing",
+          "src.schemas.casino_intelligence_schema",
+          "asyncio",
+          "langchain_core.output_parsers",
+          "langchain.retrievers",
+          "datetime",
+          "src.schemas.review_doc",
           "langchain_core.documents",
+          "langchain_core.callbacks",
+          "unittest.mock",
+          "pydantic",
+          "typing",
           "langchain_core.prompts",
           "logging",
-          "langchain_core.runnables",
-          "langchain_core.callbacks",
-          "src.schemas.casino_intelligence_schema",
-          "src.schemas.review_doc",
-          "langchain.retrievers",
-          "langchain_core.output_parsers",
-          "langchain_core.retrievers",
-          "datetime",
-          "asyncio",
-          "unittest.mock",
+          "langchain_openai",
           "src.integrations.supabase_vector_store",
-          "pydantic",
-          "langchain_openai"
+          "langchain_core.runnables",
+          "langchain_core.retrievers"
         ],
         "features": [
           "langchain_runnable",
@@ -3350,14 +3419,14 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
           "asyncio",
           "datetime",
           "pydantic",
-          "langchain_openai"
+          "typing",
+          "langchain_core.prompts",
+          "logging",
+          "langchain_openai",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -3487,17 +3556,17 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
+          "xml.dom",
           "asyncio",
-          "html",
           "datetime",
-          "xml.etree.ElementTree",
           "pydantic",
+          "html",
+          "xml.etree.ElementTree",
+          "typing",
+          "langchain_core.prompts",
+          "logging",
           "langchain_openai",
-          "xml.dom"
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -3578,21 +3647,21 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "langchain_core.documents",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
           "asyncio",
-          "traceback",
-          "langchain_core.output_parsers",
           "urllib.parse",
-          "dataclasses",
-          "pydantic",
-          "langchain_openai",
-          "time",
+          "langchain_core.output_parsers",
+          "langchain_core.documents",
           "concurrent.futures",
-          "langchain_community.document_loaders"
+          "traceback",
+          "pydantic",
+          "typing",
+          "time",
+          "langchain_community.document_loaders",
+          "langchain_core.prompts",
+          "langchain_openai",
+          "re",
+          "dataclasses",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -3657,8 +3726,8 @@
           }
         ],
         "imports": [
-          "typing",
-          "authoritative_hyperlink_engine"
+          "authoritative_hyperlink_engine",
+          "typing"
         ],
         "features": [
           "has_tests"
@@ -3767,26 +3836,26 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.documents",
-          "src.chains.multi_tenant_retrieval_system",
-          "enum",
-          "asyncio",
-          "langchain_openai",
-          "langchain_core.prompts",
-          "src.integrations.playwright_screenshot_engine",
-          "src.integrations.browserbase_screenshot_toolkit",
-          "langchain_core.runnables",
-          "hashlib",
           "src.schemas.review_doc",
-          "datetime",
-          "langchain_core.output_parsers",
+          "langchain_core.documents",
           "json",
+          "typing",
+          "asyncio",
           "base64",
-          "src.integrations.supabase_vector_store",
+          "enum",
+          "hashlib",
+          "logging",
+          "langchain_openai",
+          "langchain_core.runnables",
+          "langchain_core.output_parsers",
+          "src.chains.multi_tenant_retrieval_system",
+          "src.integrations.browserbase_screenshot_toolkit",
+          "src.integrations.playwright_screenshot_engine",
+          "pathlib",
+          "datetime",
           "pydantic",
-          "pathlib"
+          "langchain_core.prompts",
+          "src.integrations.supabase_vector_store"
         ],
         "features": [
           "langchain_runnable",
@@ -3848,20 +3917,20 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain.schema",
-          "langchain_core.runnables",
-          "langchain_community.vectorstores",
-          "enum",
           "asyncio",
-          "langchain.text_splitter",
           "langchain_core.output_parsers",
+          "re",
           "pydantic",
+          "langchain.text_splitter",
+          "langchain_community.vectorstores",
+          "typing",
+          "enum",
+          "langchain_core.prompts",
+          "logging",
+          "langchain.schema",
+          "langchain_openai",
           "dataclasses",
-          "langchain_openai"
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -4002,21 +4071,21 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.documents",
-          "langchain_core.runnables",
-          "src.schemas.casino_intelligence_schema",
-          "enum",
-          "src.schemas.review_doc",
           "datetime",
           "langchain_core.output_parsers",
-          "json",
+          "src.schemas.review_doc",
+          "langchain_core.documents",
           "pydantic",
+          "enum",
+          "typing",
+          "json",
+          "langchain_openai",
+          "langchain_core.prompts",
+          "logging",
+          "re",
           "pathlib",
-          "langchain_openai"
+          "src.schemas.casino_intelligence_schema",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -4115,19 +4184,19 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
           "asyncio",
+          "urllib.parse",
           "datetime",
           "langchain_core.output_parsers",
-          "urllib.parse",
           "comprehensive_research_chain",
           "pydantic",
+          "typing",
           "langchain_openai",
-          "langchain_community.document_loaders"
+          "langchain_community.document_loaders",
+          "langchain_core.prompts",
+          "logging",
+          "re",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -4261,15 +4330,15 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "logging",
-          "enum",
-          "hashlib",
           "datetime",
           "json",
-          "src.templates.improved_template_manager",
-          "dataclasses"
+          "typing",
+          "enum",
+          "hashlib",
+          "logging",
+          "re",
+          "dataclasses",
+          "src.templates.improved_template_manager"
         ],
         "features": [
           "lcel_composition",
@@ -4424,57 +4493,57 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.documents",
-          "langchain_core.callbacks",
-          "integrations.coinflip_wordpress_publisher",
-          "src.schemas.casino_intelligence_schema",
-          "enum",
-          "asyncio",
-          "markdown",
-          "templates.improved_template_manager",
-          "dotenv",
-          "langchain",
-          "langchain_openai",
-          "warnings",
-          "langchain_redis.cache",
-          "langchain_community.document_loaders",
-          "langchain_core.prompts",
-          "langchain_anthropic",
-          "traceback",
-          "authoritative_hyperlink_engine",
-          "integrations.langchain_wordpress_tool",
-          "enhanced_web_research_chain",
-          "uuid",
-          "supabase",
-          "integrations.browserbase_screenshot_toolkit",
-          "integrations.dataforseo_image_search",
-          "integrations.wordpress_publisher",
-          "integrations.bulletproof_image_uploader_v1",
-          "integrations.wordpress_chain_integration",
-          "langchain_core.runnables",
-          "langchain_community.vectorstores",
-          "hashlib",
-          "json",
-          "datetime",
-          "langchain_core.output_parsers",
           "langchain.retrievers",
-          "langchain_community.vectorstores.supabase",
-          "dataclasses",
-          "src.integrations.wordpress_publisher",
-          "abc",
           "collections",
-          "langchain_community.tools.tavily_search",
-          "authority_links_config",
-          "os",
-          "re",
+          "langchain_core.callbacks",
+          "langchain_core.documents",
+          "integrations.browserbase_screenshot_toolkit",
+          "langchain_community.vectorstores.supabase",
+          "integrations.wordpress_publisher",
+          "json",
+          "typing",
+          "langchain_community.vectorstores",
+          "integrations.langchain_wordpress_tool",
+          "supabase",
           "langchain.schema",
-          "pydantic",
-          "enhanced_confidence_scoring_system",
-          "time",
+          "dotenv",
+          "asyncio",
+          "langchain",
+          "authoritative_hyperlink_engine",
+          "enum",
           "langchain_community.retrievers",
-          "langchain_core.globals"
+          "abc",
+          "hashlib",
+          "logging",
+          "integrations.dataforseo_image_search",
+          "langchain_openai",
+          "langchain_core.runnables",
+          "langchain_redis.cache",
+          "integrations.coinflip_wordpress_publisher",
+          "authority_links_config",
+          "langchain_core.output_parsers",
+          "langchain_community.tools.tavily_search",
+          "integrations.wordpress_chain_integration",
+          "uuid",
+          "templates.improved_template_manager",
+          "warnings",
+          "time",
+          "enhanced_web_research_chain",
+          "dataclasses",
+          "src.schemas.casino_intelligence_schema",
+          "src.integrations.wordpress_publisher",
+          "datetime",
+          "langchain_anthropic",
+          "markdown",
+          "traceback",
+          "enhanced_confidence_scoring_system",
+          "pydantic",
+          "langchain_core.globals",
+          "os",
+          "langchain_core.prompts",
+          "langchain_community.document_loaders",
+          "integrations.bulletproof_image_uploader_v1",
+          "re"
         ],
         "features": [
           "langchain_runnable",
@@ -4528,29 +4597,29 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
           "langchain_core.documents",
           "langchain_core.callbacks",
+          "utils.enhanced_logging",
+          "json",
+          "typing",
+          "supabase",
+          "universal_rag_lcel",
           "asyncio",
+          "advanced_prompt_system",
           "config.feature_flags",
-          "langchain_core.prompts",
+          "hashlib",
+          "logging",
+          "langchain_core.runnables",
+          "langchain_core.output_parsers",
           "monitoring.performance_profiler",
           "uuid",
-          "advanced_prompt_system",
-          "supabase",
           "config.prompt_config",
-          "langchain_core.runnables",
-          "hashlib",
-          "json",
-          "datetime",
-          "langchain_core.output_parsers",
-          "os",
-          "universal_rag_lcel",
-          "utils.enhanced_logging",
+          "time",
           "monitoring.prompt_analytics",
+          "datetime",
           "pydantic",
-          "time"
+          "os",
+          "langchain_core.prompts"
         ],
         "features": [
           "langchain_runnable",
@@ -4595,26 +4664,26 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.documents",
-          "agents.research_agent",
-          "asyncio",
-          "langchain_openai",
-          "langchain_core.prompts",
-          "langchain.text_splitter",
-          "tools.real_supabase_research_tool",
-          "langchain_core.runnables",
-          "datetime",
-          "langchain_core.output_parsers",
           "langchain.retrievers",
-          "agents.research_ingestion_agent",
-          "schemas.casino_intelligence_schema",
-          "integrations.supabase_vector_store",
-          "os",
+          "langchain_core.documents",
+          "typing",
+          "langchain.text_splitter",
           "schemas.review_doc",
+          "tools.real_supabase_research_tool",
+          "asyncio",
+          "langchain_community.retrievers",
+          "logging",
+          "langchain_openai",
+          "langchain_core.runnables",
+          "integrations.supabase_vector_store",
+          "langchain_core.output_parsers",
+          "agents.research_agent",
+          "agents.research_ingestion_agent",
+          "datetime",
           "pydantic",
-          "langchain_community.retrievers"
+          "os",
+          "langchain_core.prompts",
+          "schemas.casino_intelligence_schema"
         ],
         "features": [
           "langchain_runnable",
@@ -4719,22 +4788,22 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "langchain_core.documents",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
-          "langchain_core.messages",
+          "asyncio",
           "datetime",
           "langchain_core.output_parsers",
-          "langchain_community.vectorstores.supabase",
+          "langchain_community.tools.tavily_search",
           "langchain.retrievers",
-          "asyncio",
+          "langchain_core.documents",
+          "langchain_community.vectorstores.supabase",
           "pydantic",
+          "typing",
+          "langchain_core.messages",
           "supabase",
-          "langchain_openai",
+          "os",
+          "langchain_core.prompts",
           "dotenv",
-          "langchain_community.tools.tavily_search"
+          "langchain_openai",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -4793,26 +4862,26 @@
           }
         ],
         "imports": [
-          "typing",
+          "src.schemas.review_doc",
           "langchain_core.documents",
-          "logging",
-          "src.schemas.casino_intelligence_schema",
+          "json",
+          "langchain.text_splitter",
+          "typing",
           "asyncio",
           "urllib.parse",
+          "langgraph.graph",
+          "logging",
           "langchain_openai",
+          "langchain_core.runnables",
+          "langchain_core.output_parsers",
+          "typing_extensions",
+          "src.schemas.casino_intelligence_schema",
+          "datetime",
+          "pydantic",
           "langchain_community.document_loaders",
           "langchain_core.prompts",
-          "langchain.text_splitter",
-          "typing_extensions",
-          "langchain_core.runnables",
-          "json",
-          "src.schemas.review_doc",
-          "datetime",
-          "langchain_core.output_parsers",
-          "src.integrations.supabase_vector_store",
-          "langgraph.graph",
           "re",
-          "pydantic"
+          "src.integrations.supabase_vector_store"
         ],
         "features": [
           "langchain_runnable",
@@ -4859,14 +4928,14 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "langchain_core.prompts",
           "asyncio",
-          "langchain_core.tools",
+          "langchain.agents",
           "integrations.langchain_wordpress_tool",
-          "langchain_openai",
-          "langchain.agents"
+          "langchain_core.tools",
+          "typing",
+          "os",
+          "langchain_core.prompts",
+          "langchain_openai"
         ],
         "features": [
           "lcel_composition",
@@ -4907,12 +4976,12 @@
           }
         ],
         "imports": [
-          "typing",
-          "langchain_core.prompts",
           "asyncio",
-          "langchain_openai",
+          "langchain.agents",
+          "typing",
           "tools.native_casino_research_tools",
-          "langchain.agents"
+          "langchain_core.prompts",
+          "langchain_openai"
         ],
         "features": [
           "prompt_templates",
@@ -4960,15 +5029,15 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "langchain_core.prompts",
           "asyncio",
-          "langchain_core.tools",
-          "langchain_community.tools",
-          "langchain_openai",
           "langchain.agents",
-          "langchain_community.document_loaders"
+          "langchain_core.tools",
+          "typing",
+          "langchain_community.tools",
+          "os",
+          "langchain_core.prompts",
+          "langchain_community.document_loaders",
+          "langchain_openai"
         ],
         "features": [
           "prompt_templates",
@@ -5259,11 +5328,11 @@
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "enum",
           "datetime",
-          "pydantic"
+          "pydantic",
+          "enum",
+          "typing",
+          "re"
         ],
         "features": [
           "wordpress_api",
@@ -5276,8 +5345,8 @@
         "name": "review_doc",
         "path": "src/schemas/review_doc.py",
         "category": "schema",
-        "size": 25443,
-        "last_modified": "2025-08-24T10:05:53",
+        "size": 25983,
+        "last_modified": "2025-08-27T08:34:01.070146",
         "module_docstring": "\ud83c\udfb0 AGENTIC RAG CMS: REVIEW DOCUMENT & QA SCHEMAS\n===============================================\n\nComprehensive Pydantic schemas for the Agentic Multi-Tenant RAG CMS:\n- ReviewDoc: Complete structured output for generated content\n- QAReport: Compliance and quality validation results\n- Multi-tenant support with affiliate intelligence integration\n\nAuthor: AI Assistant & TaskMaster System  \nCreated: 2025-08-24\nTask: task-023 - Define ReviewDoc and QAReport Pydantic Schemas\nVersion: 2.0.0",
         "classes": [
           {
@@ -5291,135 +5360,145 @@
             "docstring": "Quality assessment levels"
           },
           {
-            "name": "ComplianceStatus",
+            "name": "WorkflowStatus",
             "line": 46,
+            "docstring": "Workflow execution status for content generation pipeline"
+          },
+          {
+            "name": "MediaType",
+            "line": 57,
+            "docstring": "Media asset types for content generation"
+          },
+          {
+            "name": "ComplianceStatus",
+            "line": 67,
             "docstring": "Compliance validation status"
           },
           {
             "name": "PublishingStatus",
-            "line": 54,
+            "line": 75,
             "docstring": "Publishing workflow status"
           },
           {
             "name": "MediaAsset",
-            "line": 68,
+            "line": 89,
             "docstring": "Individual media asset information"
           },
           {
             "name": "VisualContent",
-            "line": 81,
+            "line": 102,
             "docstring": "Visual content and media assets"
           },
           {
             "name": "SEOMetadata",
-            "line": 94,
+            "line": 115,
             "docstring": "SEO optimization metadata"
           },
           {
             "name": "WordPressMetadata",
-            "line": 110,
+            "line": 131,
             "docstring": "WordPress-specific publishing metadata"
           },
           {
             "name": "TenantConfiguration",
-            "line": 126,
+            "line": 147,
             "docstring": "Tenant-specific configuration and branding"
           },
           {
             "name": "AffiliateIntelligence",
-            "line": 141,
+            "line": 162,
             "docstring": "Affiliate intelligence integration"
           },
           {
             "name": "ReviewDoc",
-            "line": 154,
+            "line": 175,
             "docstring": "\ud83c\udfb0 COMPREHENSIVE REVIEW DOCUMENT SCHEMA\n========================================\n\nComplete structured output for agentic content generation supporting:\n- Multi-tenant branding and localization\n- 95-field affiliate intelligence integration\n- World-class narrative content generation\n- SEO optimization and WordPress publishing\n- Compliance validation and quality control"
           },
           {
             "name": "QACheck",
-            "line": 284,
+            "line": 305,
             "docstring": "Individual QA check result"
           },
           {
             "name": "ContentQualityAssessment",
-            "line": 294,
+            "line": 315,
             "docstring": "Content quality assessment results"
           },
           {
             "name": "AffiliateComplianceAssessment",
-            "line": 305,
+            "line": 326,
             "docstring": "Affiliate compliance validation results"
           },
           {
             "name": "TechnicalQAAssessment",
-            "line": 316,
+            "line": 337,
             "docstring": "Technical quality assessment"
           },
           {
             "name": "QAReport",
-            "line": 326,
+            "line": 347,
             "docstring": "\ud83d\udd0d COMPREHENSIVE QA VALIDATION REPORT\n=====================================\n\nComplete quality assurance and compliance validation for generated content:\n- Content quality assessment\n- Affiliate compliance validation  \n- Technical quality checks\n- Multi-tenant compliance verification"
           }
         ],
         "functions": [
           {
             "name": "create_empty_review_doc",
-            "line": 440,
+            "line": 461,
             "docstring": "Create an empty ReviewDoc with basic tenant configuration"
           },
           {
             "name": "create_qa_report",
-            "line": 472,
+            "line": 493,
             "docstring": "Create a QA report for a ReviewDoc"
           },
           {
             "name": "validate_tenant_consistency",
-            "line": 241,
+            "line": 262,
             "docstring": "Ensure tenant configuration consistency"
           },
           {
             "name": "validate_content_quality",
-            "line": 253,
+            "line": 274,
             "docstring": "Validate content meets quality standards"
           },
           {
             "name": "calculate_word_count",
-            "line": 260,
+            "line": 281,
             "docstring": "Auto-calculate word count from body content"
           },
           {
             "name": "calculate_reading_time",
-            "line": 272,
+            "line": 293,
             "docstring": "Auto-calculate reading time (average 200 words per minute)"
           },
           {
             "name": "is_publishing_approved",
-            "line": 386,
+            "line": 407,
             "docstring": "Check if content is approved for publishing"
           },
           {
             "name": "get_blocking_issues",
-            "line": 395,
+            "line": 416,
             "docstring": "Get all issues that block publishing"
           },
           {
             "name": "calculate_improvement_score",
-            "line": 406,
+            "line": 427,
             "docstring": "Calculate how much improvement is needed to pass"
           },
           {
             "name": "validate_qa_consistency",
-            "line": 414,
+            "line": 435,
             "docstring": "Validate QA result consistency"
           }
         ],
         "imports": [
-          "re",
-          "typing",
-          "casino_intelligence_schema",
-          "enum",
           "datetime",
-          "pydantic"
+          "casino_intelligence_schema",
+          "pydantic",
+          "enum",
+          "typing",
+          "re"
         ],
         "features": [
           "firecrawl_api",
@@ -5429,10 +5508,58 @@
           "publishing",
           "has_tests"
         ],
-        "lines_of_code": 514
+        "lines_of_code": 535
       }
     ],
     "pipelines": [
+      {
+        "name": "betfirst_pipeline_demo",
+        "path": "betfirst_pipeline_demo.py",
+        "category": "pipeline",
+        "size": 5850,
+        "last_modified": "2025-08-27T08:36:51.781109",
+        "module_docstring": "\ud83c\udfb0 BETFIRST CASINO - CCMS PRODUCTION DEMO\n========================================\n\nDemonstration of working CCMS components for Betfirst Casino.\nShows configuration loading, research tools, and component integration.",
+        "classes": [],
+        "functions": [
+          {
+            "name": "demo_ccms_components",
+            "line": 28,
+            "docstring": "Demonstrate working CCMS components for Betfirst Casino"
+          },
+          {
+            "name": "create_simple_research_chain",
+            "line": 86,
+            "docstring": "Simple LCEL chain for research processing"
+          },
+          {
+            "name": "process_casino_data",
+            "line": 89,
+            "docstring": "Process casino data with basic intelligence"
+          }
+        ],
+        "imports": [
+          "datetime",
+          "src.schemas.review_doc",
+          "typing",
+          "src.tools.supabase_research_get_tool",
+          "time",
+          "os",
+          "langchain_openai",
+          "dotenv",
+          "src.tools.supabase_research_store_tool",
+          "langchain_core.runnables"
+        ],
+        "features": [
+          "langchain_runnable",
+          "lcel_composition",
+          "supabase_integration",
+          "openai_api",
+          "research_functionality",
+          "production_ready",
+          "has_tests"
+        ],
+        "lines_of_code": 177
+      },
       {
         "name": "complete_viage_casino_pipeline",
         "path": "complete_viage_casino_pipeline.py",
@@ -5500,21 +5627,21 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.prompts",
-          "langchain_core.runnables",
-          "src.schemas.casino_intelligence_schema",
-          "src.tools.wordpress_media_tool",
-          "json",
           "datetime",
           "langchain_core.output_parsers",
+          "src.tools.wordpress_post_update_tool",
           "src.tools.google_images_search_tool",
-          "src.tools.image_download_tool",
+          "json",
+          "typing",
           "pydantic",
-          "pathlib",
+          "src.tools.image_download_tool",
+          "src.tools.wordpress_media_tool",
+          "langchain_core.prompts",
+          "logging",
           "langchain_openai",
-          "src.tools.wordpress_post_update_tool"
+          "pathlib",
+          "src.schemas.casino_intelligence_schema",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -5533,107 +5660,196 @@
         "name": "ccms_pipeline",
         "path": "ccms_pipeline.py",
         "category": "pipeline",
-        "size": 38840,
-        "last_modified": "2025-08-26T21:33:34.818690",
+        "size": 85701,
+        "last_modified": "2025-08-27T15:56:58.714241",
         "module_docstring": "\ud83c\udfb0 CCMS Production Pipeline - Claude.md Compliant\n==============================================\n\nNative LangChain LCEL pipeline for casino review generation.\nSingle declarative pipeline with Supabase-driven configuration.\n\nARCHITECTURE:\n- 100% Native LangChain/LCEL composition\n- All external I/O via /src/tools/* BaseTool implementations  \n- Config-driven via Supabase (no hardcoded values)\n- Compliance gates with fail-fast behavior\n- Complete observability and retry logic\n\nPIPELINE: config \u2192 research \u2192 content \u2192 (seo | media) \u2192 compliance \u2192 publish \u2192 metrics",
         "classes": [
           {
             "name": "CCMSInput",
-            "line": 44,
+            "line": 51,
             "docstring": "Input schema for CCMS pipeline"
           },
           {
             "name": "CCMSResult",
-            "line": 53,
+            "line": 60,
             "docstring": "Output schema for CCMS pipeline"
           },
           {
             "name": "ComplianceError",
-            "line": 81,
+            "line": 88,
             "docstring": "Exception raised when compliance checks fail"
+          },
+          {
+            "name": "SafeResearchData",
+            "line": 140,
+            "docstring": "CLAUDE.md compliant research data - typed I/O with provenance"
           }
         ],
         "functions": [
           {
             "name": "resolve_config",
-            "line": 89,
+            "line": 96,
             "docstring": "Step 1: Resolve tenant configuration from Supabase\nUses config hierarchy: tenant_overrides > tenant_defaults > global_defaults"
           },
           {
             "name": "research_step",
-            "line": 116,
+            "line": 123,
             "docstring": "Step 2: Load OR collect comprehensive casino research\nUses existing research if available, otherwise runs research pipeline"
           },
           {
             "name": "content_step",
-            "line": 226,
-            "docstring": "Step 3: Generate structured content blocks from research + brand voice\nCRITICAL: Fails fast if no research data to prevent inaccurate content"
+            "line": 553,
+            "docstring": "Step 3: Enhanced Content Generation Workflow - COMPREHENSIVE PHASE 1-3 ORCHESTRATION\nUses the sophisticated Enhanced Content Generation Workflow integrating:\n- Phase 1: Multi-Tenant Retrieval System (already integrated in research_step)\n- Phase 2: Narrative Generation + QA Compliance Chain  \n- Phase 3: Visual Content Pipeline integration\nCRITICAL: Fails fast if no research data to prevent inaccurate content"
           },
           {
             "name": "seo_step",
-            "line": 304,
+            "line": 799,
             "docstring": "Step 4A: Create SEO metadata, JSON-LD schema, and optimization"
           },
           {
             "name": "media_step",
-            "line": 382,
-            "docstring": "Step 4B: Process media assets using Firecrawl screenshot capture"
+            "line": 877,
+            "docstring": "Step 4B: Comprehensive Visual Content Pipeline - SOPHISTICATED MEDIA PROCESSING\nUses the sophisticated Visual Content Pipeline with:\n- Browserbase/Playwright automated screenshot capture\n- Visual content processing and quality assessment  \n- Compliance validation for images and media assets\n- Multi-tenant visual content management"
           },
           {
             "name": "compliance_step",
-            "line": 481,
-            "docstring": "Step 5: Validate content compliance - BLOCKING GATE"
+            "line": 1093,
+            "docstring": "Step 5: Comprehensive QA & Compliance Validation - SOPHISTICATED 4-VALIDATOR SYSTEM\nUses the comprehensive QA & Compliance Chain with:\n- AffiliateComplianceValidator (18+, responsible gambling, disclosure)  \n- FactualAccuracyValidator (source verification)\n- BrandStyleValidator (voice consistency, brand guidelines)\n- ContentQualityValidator (completeness, readability, structure)"
           },
           {
             "name": "publish_step",
-            "line": 586,
-            "docstring": "Step 6: Publish to WordPress with full SEO and ACF integration"
+            "line": 1285,
+            "docstring": "Step 6: COMPREHENSIVE WORDPRESS PUBLISHING CHAIN - SOPHISTICATED PUBLISHING INTEGRATION\nUses the sophisticated WordPress Publishing Chain with:\n- Direct WordPress REST API integration with authentication\n- Visual content publishing to WordPress media library  \n- SEO-optimized post creation with meta data\n- Multi-tenant WordPress site management\n- Integration with all Phase 1-4 content generation components"
           },
           {
             "name": "postpublish_step",
-            "line": 679,
+            "line": 1524,
             "docstring": "Step 7: Record metrics and quality scores to Supabase"
           },
           {
             "name": "format_final_results",
-            "line": 702,
+            "line": 1547,
             "docstring": "Step 8: Format final pipeline output"
           },
           {
             "name": "add_start_time",
-            "line": 748,
+            "line": 1593,
             "docstring": null
           },
           {
             "name": "merge_parallel_results",
-            "line": 755,
+            "line": 1600,
             "docstring": "Merge results from parallel seo and media chains"
           },
           {
             "name": "run_ccms_pipeline",
-            "line": 791,
+            "line": 1636,
             "docstring": "Execute the complete CCMS pipeline\n\nArgs:\n    tenant_slug: Tenant identifier (e.g., 'crashcasino')\n    casino_slug: Casino identifier (e.g., 'viage')\n    locale: Locale code (e.g., 'en-GB')\n    run_id: Optional run identifier (auto-generated if not provided)\n    dry_run: Preview mode - no publishing\n    skip_compliance: Skip compliance gates (DANGEROUS)\n\nReturns:\n    Complete pipeline results with all artifacts and metrics"
+          },
+          {
+            "name": "fetch_existing_research",
+            "line": 193,
+            "docstring": "LCEL-compatible function for fetching research"
+          },
+          {
+            "name": "check_sufficient_fields",
+            "line": 202,
+            "docstring": "Check if research has sufficient fields (>=50 of 95+)"
+          },
+          {
+            "name": "create_retrieval_runnable",
+            "line": 299,
+            "docstring": null
+          },
+          {
+            "name": "create_retriever_adapter",
+            "line": 327,
+            "docstring": null
+          },
+          {
+            "name": "create_comprehensive_chain",
+            "line": 344,
+            "docstring": null
+          },
+          {
+            "name": "create_safe_transform_chain",
+            "line": 368,
+            "docstring": null
+          },
+          {
+            "name": "create_storage_chain",
+            "line": 439,
+            "docstring": null
+          },
+          {
+            "name": "basic_fallback_research",
+            "line": 477,
+            "docstring": null
+          },
+          {
+            "name": "compute_field_extraction_count",
+            "line": 184,
+            "docstring": "Compute actual non-null field count dynamically"
+          },
+          {
+            "name": "retrieve_documents",
+            "line": 303,
+            "docstring": null
+          },
+          {
+            "name": "adapt_to_retriever",
+            "line": 328,
+            "docstring": null
+          },
+          {
+            "name": "run_comprehensive_research",
+            "line": 345,
+            "docstring": null
+          },
+          {
+            "name": "transform_to_safe_data",
+            "line": 369,
+            "docstring": "Transform to SafeResearchData with no fabricated defaults"
+          },
+          {
+            "name": "store_research",
+            "line": 440,
+            "docstring": null
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "logging",
-          "src.chains.native_universal_rag_lcel",
-          "langchain_core.runnables",
-          "asyncio",
-          "datetime",
+          "langchain_core.vectorstores",
+          "src.chains.visual_content_pipeline",
           "src.schemas.review_doc",
-          "src.tools.placeholder_image_generator",
-          "src.tools.wordpress_enhanced_publisher",
-          "src.tools.firecrawl_screenshot_tool",
-          "src.tools.comprehensive_content_generator",
-          "pydantic",
-          "uuid",
-          "src.tools.real_supabase_config_tool",
-          "src.tools.real_supabase_research_tool",
+          "langchain_core.documents",
+          "typing",
           "src.chains.narrative_generation_lcel",
-          "time"
+          "dotenv",
+          "asyncio",
+          "src.tools.document_retriever_adapter",
+          "src.chains.comprehensive_research_chain",
+          "src.workflows.enhanced_content_generation_workflow",
+          "src.integrations.wordpress_publishing_chain",
+          "src.tools.firecrawl_screenshot_tool",
+          "logging",
+          "langchain_openai",
+          "sys",
+          "langchain_core.runnables",
+          "src.chains.qa_compliance_chain",
+          "src.chains.multi_tenant_retrieval_system",
+          "uuid",
+          "src.tools.real_supabase_research_tool",
+          "src.tools.supabase_research_get_tool",
+          "time",
+          "src.tools.wordpress_enhanced_publisher",
+          "datetime",
+          "src.tools.real_supabase_config_tool",
+          "pydantic",
+          "src.tools.comprehensive_content_generator",
+          "os",
+          "src.tools.supabase_research_store_tool",
+          "src.tools.placeholder_image_generator",
+          "src.integrations.supabase_vector_store"
         ],
         "features": [
           "langchain_runnable",
@@ -5641,14 +5857,17 @@
           "parallel_execution",
           "supabase_integration",
           "vector_store",
+          "openai_api",
           "firecrawl_api",
           "wordpress_api",
           "screenshot_capture",
           "research_functionality",
           "publishing",
-          "production_ready"
+          "async_support",
+          "production_ready",
+          "has_tests"
         ],
-        "lines_of_code": 869
+        "lines_of_code": 1730
       },
       {
         "name": "run_betfirst_production_pipeline",
@@ -5660,10 +5879,10 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "ccms_pipeline",
-          "sys",
           "asyncio",
-          "pathlib"
+          "sys",
+          "pathlib",
+          "ccms_pipeline"
         ],
         "features": [
           "lcel_composition",
@@ -5729,11 +5948,11 @@
           }
         ],
         "imports": [
-          "ccms_pipeline",
-          "logging",
-          "langchain_core.runnables",
           "unittest.mock",
-          "pytest"
+          "pytest",
+          "logging",
+          "ccms_pipeline",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -5762,14 +5981,14 @@
         ],
         "functions": [],
         "imports": [
-          "os",
-          "typing",
-          "json",
           "asyncio",
           "datetime",
+          "json",
+          "typing",
+          "chains.native_universal_rag_lcel",
+          "os",
           "sys",
           "pathlib",
-          "chains.native_universal_rag_lcel",
           "argparse"
         ],
         "features": [
@@ -5824,25 +6043,25 @@
           }
         ],
         "imports": [
+          "json",
           "typing",
-          "logging",
-          "asyncio",
-          "dotenv",
-          "langchain_openai",
-          "langchain_community.document_loaders",
-          "langchain_core.prompts",
-          "traceback",
           "langchain.text_splitter",
           "supabase",
-          "langchain_core.runnables",
           "langchain_community.vectorstores",
-          "json",
-          "datetime",
-          "langchain_core.output_parsers",
+          "langchain.schema",
+          "dotenv",
+          "asyncio",
+          "logging",
+          "langchain_openai",
           "sys",
+          "langchain_core.runnables",
+          "langchain_core.output_parsers",
           "langchain_community.tools.tavily_search",
+          "datetime",
+          "traceback",
           "os",
-          "langchain.schema"
+          "langchain_community.document_loaders",
+          "langchain_core.prompts"
         ],
         "features": [
           "langchain_runnable",
@@ -5903,23 +6122,23 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "tools.firecrawl_screenshot_tool",
-          "logging",
-          "langchain_core.runnables",
-          "chains.web_research_chain",
           "datetime",
           "chains.comprehensive_research_chain",
-          "sys",
-          "pydantic",
+          "tools.firecrawl_screenshot_tool",
           "uuid",
+          "chains.web_research_chain",
           "tools.placeholder_image_generator",
-          "tools.comprehensive_content_generator",
-          "time",
-          "tools.real_supabase_config_tool",
           "tools.wordpress_enhanced_publisher",
-          "tools.real_supabase_research_tool"
+          "pydantic",
+          "typing",
+          "tools.real_supabase_config_tool",
+          "time",
+          "os",
+          "tools.comprehensive_content_generator",
+          "logging",
+          "tools.real_supabase_research_tool",
+          "sys",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -5991,16 +6210,16 @@
           }
         ],
         "imports": [
-          "typing",
-          "logging",
-          "langchain_core.runnables",
-          "src.tools.wordpress_media_tool",
           "datetime",
           "src.tools.google_images_search_tool",
-          "src.tools.image_download_tool",
-          "src.tools.wordpress_post_creation_tool",
           "pydantic",
-          "pathlib"
+          "typing",
+          "src.tools.image_download_tool",
+          "src.tools.wordpress_media_tool",
+          "src.tools.wordpress_post_creation_tool",
+          "logging",
+          "pathlib",
+          "langchain_core.runnables"
         ],
         "features": [
           "langchain_runnable",
@@ -6023,14 +6242,14 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "json",
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6051,16 +6270,16 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "typing",
-          "logging",
           "asyncio",
           "datetime",
-          "traceback",
           "chains.comprehensive_research_chain",
-          "sys",
-          "pathlib",
+          "traceback",
+          "typing",
           "chains.native_universal_rag_lcel",
-          "tools.real_supabase_research_tool"
+          "logging",
+          "tools.real_supabase_research_tool",
+          "sys",
+          "pathlib"
         ],
         "features": [
           "langchain_runnable",
@@ -6088,16 +6307,16 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "integrations.coinflip_mt_casino_publisher",
+          "json",
+          "chains.universal_rag_lcel",
           "schemas.casino_intelligence_schema",
-          "time"
+          "time",
+          "os",
+          "integrations.coinflip_mt_casino_publisher",
+          "sys"
         ],
         "features": [
           "supabase_integration",
@@ -6119,13 +6338,13 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "dotenv"
+          "chains.universal_rag_lcel",
+          "os",
+          "dotenv",
+          "sys"
         ],
         "features": [
           "supabase_integration",
@@ -6147,9 +6366,9 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "chains.universal_rag_lcel",
-          "traceback",
           "asyncio",
+          "traceback",
+          "chains.universal_rag_lcel",
           "sys",
           "pathlib"
         ],
@@ -6171,12 +6390,12 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
           "asyncio",
           "datetime",
-          "sys",
-          "time"
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6197,13 +6416,13 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6213,6 +6432,33 @@
           "has_tests"
         ],
         "lines_of_code": 158
+      },
+      {
+        "name": "run_betfirst_production",
+        "path": "run_betfirst_production.py",
+        "category": "pipeline",
+        "size": 2189,
+        "last_modified": "2025-08-27T15:59:22.544811",
+        "module_docstring": "\ud83c\udfb0 BETFIRST CASINO - PRODUCTION EXECUTION\n========================================\n\nDirect execution script for Betfirst Casino production review.\nBypasses complex import issues by executing the fixed ccms_pipeline directly.",
+        "classes": [],
+        "functions": [
+          {
+            "name": "run_betfirst_production",
+            "line": 15,
+            "docstring": "Execute production review for Betfirst Casino"
+          }
+        ],
+        "imports": [
+          "subprocess",
+          "sys",
+          "time",
+          "datetime"
+        ],
+        "features": [
+          "publishing",
+          "production_ready"
+        ],
+        "lines_of_code": 71
       },
       {
         "name": "run_optimized_betway_research",
@@ -6230,12 +6476,12 @@
           }
         ],
         "imports": [
-          "os",
-          "logging",
+          "src.chains.optimized_research_pipeline",
           "asyncio",
           "datetime",
-          "src.chains.optimized_research_pipeline",
           "src.schemas.review_doc",
+          "os",
+          "logging",
           "sys",
           "pathlib"
         ],
@@ -6271,17 +6517,17 @@
           }
         ],
         "imports": [
-          "os",
-          "typing",
-          "logging",
-          "langchain_core.documents",
           "asyncio",
-          "traceback",
           "datetime",
+          "langchain_core.documents",
+          "traceback",
+          "typing",
+          "chains.native_universal_rag_lcel",
+          "os",
+          "logging",
           "langchain_text_splitters",
           "sys",
-          "pathlib",
-          "chains.native_universal_rag_lcel"
+          "pathlib"
         ],
         "features": [
           "lcel_composition",
@@ -6307,15 +6553,15 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "integrations.wordpress_publisher",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "integrations.wordpress_publisher",
+          "json",
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6336,10 +6582,10 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "ccms_pipeline",
-          "sys",
           "asyncio",
-          "pathlib"
+          "sys",
+          "pathlib",
+          "ccms_pipeline"
         ],
         "features": [
           "lcel_composition",
@@ -6354,6 +6600,36 @@
         "lines_of_code": 63
       },
       {
+        "name": "run_production_review",
+        "path": "run_production_review.py",
+        "category": "pipeline",
+        "size": 3851,
+        "last_modified": "2025-08-27T08:48:27.448232",
+        "module_docstring": "\ud83c\udfb0 PRODUCTION COMMAND: Generate Complete Casino Review\n=====================================================\n\nProduction-ready command for generating comprehensive casino reviews.\nUsage: python run_production_review.py <casino_name> <word_count> <tenant>\n\nFeatures:\n- Real 95+ field research collection\n- Professional 2500+ word content generation  \n- Image capture and processing\n- WordPress publication with SEO\n- Full compliance validation",
+        "classes": [],
+        "functions": [
+          {
+            "name": "generate_production_review",
+            "line": 25,
+            "docstring": "Generate and publish a complete production casino review\n\nArgs:\n    casino_name: Name of casino to review (e.g. \"betfirst\")\n    word_count: Target word count (default 2500)\n    tenant: Publishing tenant (default \"crashcasino\")"
+          }
+        ],
+        "imports": [
+          "time",
+          "os",
+          "dotenv",
+          "sys",
+          "ccms_pipeline"
+        ],
+        "features": [
+          "wordpress_api",
+          "research_functionality",
+          "publishing",
+          "production_ready"
+        ],
+        "lines_of_code": 116
+      },
+      {
         "name": "run_trustdice_wordpress_complete",
         "path": "run_trustdice_wordpress_complete.py",
         "category": "pipeline",
@@ -6363,14 +6639,14 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "json",
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6391,15 +6667,15 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "integrations.wordpress_publisher",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "integrations.wordpress_publisher",
+          "json",
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6420,14 +6696,14 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "json",
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6448,14 +6724,14 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "json",
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6477,14 +6753,14 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "json",
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6506,15 +6782,15 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "integrations.wordpress_publisher",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "integrations.wordpress_publisher",
+          "json",
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "wordpress_api",
@@ -6535,13 +6811,13 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "research_functionality",
@@ -6560,14 +6836,14 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "logging",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
+          "json",
+          "time",
           "src.chains.universal_rag_lcel",
-          "pathlib",
-          "time"
+          "logging",
+          "pathlib"
         ],
         "features": [
           "lcel_composition",
@@ -6593,11 +6869,11 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "chains.universal_rag_lcel",
           "asyncio",
           "datetime",
           "traceback",
+          "chains.universal_rag_lcel",
+          "os",
           "sys",
           "pathlib"
         ],
@@ -6621,15 +6897,15 @@
         "classes": [],
         "functions": [],
         "imports": [
-          "os",
-          "typing",
-          "chains.universal_rag_lcel",
-          "json",
           "asyncio",
           "datetime",
           "traceback",
-          "sys",
-          "time"
+          "json",
+          "typing",
+          "chains.universal_rag_lcel",
+          "time",
+          "os",
+          "sys"
         ],
         "features": [
           "tavily_api",
@@ -6972,6 +7248,13 @@
         "last_modified": "2025-06-25T19:12:04"
       },
       {
+        "name": "betfirst_production_results_20250827_190201.json",
+        "path": "betfirst_production_results_20250827_190201.json",
+        "type": "config",
+        "size": 575,
+        "last_modified": "2025-08-27T19:02:01.119632"
+      },
+      {
         "name": "trustdice_complete_chain_results_20250624_114044.json",
         "path": "trustdice_complete_chain_results_20250624_114044.json",
         "type": "config",
@@ -7171,8 +7454,8 @@
         "name": "pyproject.toml",
         "path": "pyproject.toml",
         "type": "config",
-        "size": 3635,
-        "last_modified": "2025-06-12T13:10:26"
+        "size": 3661,
+        "last_modified": "2025-08-27T18:58:32.634078"
       },
       {
         "name": "poetry.toml",

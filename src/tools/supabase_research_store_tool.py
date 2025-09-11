@@ -14,7 +14,7 @@ import logging
 import time
 from typing import Dict, Any, Optional
 from pydantic import BaseModel, Field
-from langchain.tools import BaseTool
+from langchain_core.tools import BaseTool
 from supabase import create_client, Client
 
 logger = logging.getLogger(__name__)

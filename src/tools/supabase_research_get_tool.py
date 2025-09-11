@@ -13,7 +13,7 @@ import os
 import logging
 from typing import Dict, Any, Optional
 from pydantic import BaseModel, Field
-from langchain.tools import BaseTool
+from langchain_core.tools import BaseTool
 
 # Import the existing implementation
 from .real_supabase_research_tool import RealSupabaseResearchTool
