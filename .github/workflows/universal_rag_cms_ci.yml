@@ -52,7 +52,7 @@ jobs:
       python_version: ${{ env.PYTHON_VERSION }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 2
 
@@ -93,7 +93,7 @@ jobs:
     if: needs.pre_flight.outputs.should_run_tests == 'true'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -139,7 +139,7 @@ jobs:
     if: needs.pre_flight.outputs.should_run_tests == 'true'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -202,7 +202,7 @@ jobs:
         python-version: ['3.9', '3.10', '3.11']
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
@@ -271,7 +271,7 @@ jobs:
           - 6379:6379
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -330,7 +330,7 @@ jobs:
     if: needs.pre_flight.outputs.should_run_tests == 'true' && (env.TEST_SUITE == 'all' || env.TEST_SUITE == 'performance')
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -374,7 +374,7 @@ jobs:
     if: needs.pre_flight.outputs.should_run_tests == 'true' && (env.TEST_SUITE == 'all' || env.TEST_SUITE == 'security')
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -413,7 +413,7 @@ jobs:
     if: always() && (needs.unit_tests.result == 'success' || needs.integration_tests.result == 'success')
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v4

@@ -34,7 +34,7 @@ jobs:
       baseline_results: ${{ steps.baseline.outputs.results }}
     steps:
       - name: Checkout baseline code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ env.BASELINE_REF }}
           path: baseline
@@ -85,7 +85,7 @@ jobs:
       current_results: ${{ steps.current.outputs.results }}
     steps:
       - name: Checkout current code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python for current
         uses: actions/setup-python@v4
@@ -130,7 +130,7 @@ jobs:
     needs: [performance_baseline, performance_current]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -366,7 +366,7 @@ jobs:
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download current results
         uses: actions/download-artifact@v3
